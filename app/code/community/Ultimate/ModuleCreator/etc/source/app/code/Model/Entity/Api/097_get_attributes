@@ -1,9 +1,9 @@
     /**
-    * Get list of additional attributes which are not in default create/update list
-    * @access public
-    * @return array
-    * {{qwertyuiop}}
-    */
+     * Get list of additional attributes which are not in default create/update list
+     * @access public
+     * @return array
+     * {{qwertyuiop}}
+     */
     public function getAdditionalAttributes() {
         $entity = Mage::getModel('eav/entity_type')->load('{{namespace}}_{{module}}_{{entity}}', 'entity_type_code');
         $attributes = Mage::getResourceModel('eav/entity_attribute_collection')

@@ -44,6 +44,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_ModuleCreator_Edit_Tab_Entities
     public function getTabLabel() {
         return Mage::helper('modulecreator')->__('Entities');
     }
+
     /**
      * Return Tab title
      * @access public
@@ -53,6 +54,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_ModuleCreator_Edit_Tab_Entities
     public function getTabTitle() {
         return Mage::helper('modulecreator')->__('Entities');
     }
+
     /**
      * Can show tab in tabs
      * @access public

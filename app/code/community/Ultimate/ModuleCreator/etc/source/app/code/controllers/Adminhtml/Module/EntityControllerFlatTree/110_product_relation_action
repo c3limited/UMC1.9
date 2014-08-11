@@ -1,10 +1,10 @@
     /**
-     * get the products grid
+     * Get the products grid
+     *
      * @access public
      * @return void
-     * {{qwertyuiop}}
      */
-    public function productsgridAction(){
+    public function productsgridAction() {
         if (!${{entity}} = $this->_init{{Entity}}()) {
             return;
         }

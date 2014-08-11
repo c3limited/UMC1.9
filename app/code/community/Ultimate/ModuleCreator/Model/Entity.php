@@ -80,6 +80,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $this->_module = $module;
         return $this;
     }
+
     /**
      * get the entity module
      * @access public
@@ -89,6 +90,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getModule(){
         return $this->_module;
     }
+
     /**
      * add new attribute
      * @access public
@@ -131,6 +133,7 @@ class Ultimate_ModuleCreator_Model_Entity
         Mage::dispatchEvent('umc_entity_add_attribute_after', array('attribute'=>$attribute, 'entity'=>$this));
         return $this;
     }
+
     /**
      * prepare attributes
      * @access protected
@@ -157,6 +160,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $this->_preparedAttributes = true;
         return $this;
     }
+
     /**
      * ge the entity attributes
      * @access public
@@ -169,6 +173,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return $this->_attributes;
     }
+
     /**
      * entity to xml
      * @access public
@@ -204,6 +209,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return $xml;
     }
+
     /**
      * get magic function code for the name attribute
      * @access public
@@ -220,6 +226,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return $entityNameMagicCode;
     }
+
     /**
      * get the name attribute
      * @access public
@@ -239,6 +246,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getNameAttributeCode(){
         return $this->_nameAttribute->getCode();
     }
+
     /**
      * get the attribute label for the name attribute
      * @access public
@@ -248,6 +256,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getNameAttributeLabel(){
         return $this->getNameAttribute()->getLabel();
     }
+
     /**
      * check if the entity has file attributes
      * @access public
@@ -257,6 +266,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getHasFile(){
         return $this->getTypeInstance()->getHasFile();
     }
+
     /**
      * check if the entity has image attributes
      * @access public
@@ -266,6 +276,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getHasImage(){
         return $this->getTypeInstance()->getHasImage();
     }
+
     /**
      * check if the entity has upload attributes
      * @access public
@@ -275,6 +286,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getHasUpload(){
         return $this->getHasFile() || $this->getHasImage();
     }
+
     /**
      * get the first image attribute code
      * @access public
@@ -289,6 +301,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return '';
     }
+
     /**
      * get the attribute name for plural
      * @access public
@@ -309,6 +322,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return $plural;
     }
+
     /**
      * check if frontend list files must be created
      * @access public
@@ -318,6 +332,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getCreateList(){
         return $this->getCreateFrontend() && $this->getData('create_list');
     }
+
     /**
      * get list template
      * @access public
@@ -330,6 +345,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return '';
     }
+
     /**
      * check if frontend view files must be created
      * @access public
@@ -339,6 +355,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getCreateView(){
         return $this->getCreateFrontend() && $this->getData('create_view');
     }
+
     /**
      * get list template
      * @access public
@@ -351,6 +368,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return '';
     }
+
     /**
      * check if widget list files must be created
      * @access public
@@ -360,6 +378,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getWidget(){
         return $this->getCreateFrontend() && $this->getData('widget');
     }
+
     /**
      * check if SEO attributes should be added
      * @access public
@@ -369,6 +388,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getAddSeo(){
         return $this->getCreateView() && $this->getData('add_seo');
     }
+
     /**
      * check if SEO attributes should be added
      * @access public
@@ -378,6 +398,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getRss(){
         return $this->getCreateFrontend() && $this->getData('rss');
     }
+
     /**
      * check if url rewrite shoul be added
      * @access public
@@ -387,6 +408,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getUrlRewrite(){
         return $this->getCreateView() && $this->getData('url_rewrite');
     }
+
     /**
      * get url prefix
      * @access public
@@ -399,6 +421,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return '';
     }
+
     /**
      * get url suffix
      * @access public
@@ -411,6 +434,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return '';
     }
+
     /**
      * check if products are listed in the entity view page
      * @access public
@@ -420,6 +444,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getShowProducts(){
         return $this->getLinkProduct() && $this->getCreateFrontend() && $this->getData('show_products');
     }
+
     /**
      * check if entity list is shown on product page
      * @access public
@@ -429,6 +454,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getShowOnProduct(){
         return $this->getLinkProduct() && $this->getData('show_on_product');
     }
+
     /**
      * check if entity list is shown on category page
      * @access public
@@ -438,6 +464,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getShowOnCategory(){
         return $this->getLinkCategory() && $this->getData('show_on_category');
     }
+
     /**
      * add related entities
      * @access public
@@ -450,6 +477,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $this->_relatedEntities[$type][] = $entity;
         return $this;
     }
+
     /**
      * get the related entities
      * @access public
@@ -466,6 +494,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return array();
     }
+
     /**
      * check if entity does not behave as tree
      * @access public
@@ -475,6 +504,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getNotIsTree(){
         return !$this->getIsTree();
     }
+
     /**
      * check if entity does not have url rewrites
      * @access public
@@ -484,6 +514,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getNotUrlRewrite(){
         return !$this->getUrlRewrite();
     }
+
     /**
      * check if entity is EAV
      * @access public
@@ -493,6 +524,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getIsEav(){
         return $this->getType() == Ultimate_ModuleCreator_Model_Entity_Type_Abstract::TYPE_EAV;
     }
+
     /**
      * check if entity is Flat
      * @access public
@@ -534,6 +566,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getHasConfigDefaults(){
         return $this->getCreateFrontend();
     }
+
     /**
      * check if entity is linked to core entities (product, category)
      * @access public
@@ -771,6 +804,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return $text;
     }
+
     /**
      * get xml for add product save after event
      * @access public
@@ -790,6 +824,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return $text;
     }
+
     /**
      * get xml for add can load ext js
      * @access public
@@ -885,6 +920,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getCollectionAttributes(){
         return $this->getTypeInstance()->getCollectionAttributes();
     }
+
     /**
      * get join with admin - for the admin grid
      * @access public
@@ -894,6 +930,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getAdminJoin(){
         return $this->getTypeInstance()->getAdminJoin();
     }
+
     /**
      * code above the prepare columns
      * @access public
@@ -903,6 +940,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getPrepareColumnsHeader(){
         return $this->getTypeInstance()->getPrepareColumnsHeader();
     }
+
     /**
      * name attribute in grid
      * @access public
@@ -945,6 +983,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return false;
     }
+
     /**
      * get ddl text for attributes
      * @access public
@@ -1133,6 +1172,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return $attributes;
     }
+
     /**
      * get layout xml head reference
      * @access public
@@ -1153,6 +1193,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return $content;
     }
+
     /**
      * get layout xml for relation to product
      * @access public
@@ -1186,6 +1227,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return $content;
     }
+
     /**
      * get html link to entity
      * @access public
@@ -1258,6 +1300,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return $content;
     }
+
     /**
      * get the system attributes
      * @access public
@@ -1399,6 +1442,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return substr($content,0, strlen($content) - strlen($eol));
     }
+
     /**
      * get additional api xml
      * @access public
@@ -1411,6 +1455,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $content .= $this->getApiRelations();
         return $content;
     }
+
     /**
      * get additional api xml for tree entities
      * @access public
@@ -1591,6 +1636,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $content .= str_repeat($padding, 5);
         return $content;
     }
+
     /**
      * get attributes format for wsdl
      * @access public
@@ -1624,6 +1670,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $content .= $this->getTypeInstance()->getWsdlAttributes($wsi);
         return $content;
     }
+
     /**
      * get attributes format for wsi
      * @access public
@@ -1717,6 +1764,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $content .= $tab.$tab;
         return $content;
     }
+
     /**
      * get entity WSI relation types
      * @access public
@@ -1808,6 +1856,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $content .= $tab;
         return $content;
     }
+
     /**
      * get entity WSI port type for relations
      * @access public
@@ -1847,6 +1896,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $content .= $padding.'</operation>'.$eol;
         return $content;
     }
+
     /**
      * get WSDL relation binding
      * @access public
@@ -2009,6 +2059,7 @@ class Ultimate_ModuleCreator_Model_Entity
 
         return $content;
     }
+
     /**
      * get entity WSI relation param types
      * @access public
@@ -2208,6 +2259,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $content .= $tab;
         return $content;
     }
+
     /**
      * get foreign keys for sql (Ddl)
      * @access public
@@ -2266,6 +2318,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getResourceModelParent(){
         return $this->getTypeInstance()->getResourceModelParent();
     }
+
     /**
      * get parent class for the entity resource model
      * @access public
@@ -2275,6 +2328,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getResourceCollectionModelParent(){
         return $this->getTypeInstance()->getResourceCollectionModelParent();
     }
+
     /**
      * get related entities relations table
      * @access public
@@ -2284,6 +2338,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getResourceRelationsTables(){
         return $this->getTypeInstance()->getResourceRelationsTables();
     }
+
     /**
      * get related entities relations table declaration
      * @access public
@@ -2293,6 +2348,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getResourceRelationsTablesDeclare(){
         return $this->getTypeInstance()->getResourceRelationsTablesDeclare();
     }
+
     /**
      * get admin layout content for index page
      * @access public
@@ -2312,6 +2368,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getEntityParentModel() {
         return $this->getTypeInstance()->getEntityParentModel();
     }
+
     /**
      * get entity table alias
      * @access public
@@ -2321,6 +2378,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getEntityTableAlias() {
         return $this->getTypeInstance()->getEntityTableAlias();
     }
+
     /**
      * get additional prepare collection
      * @access public
@@ -2340,6 +2398,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getEditLayoutLeft() {
         return $this->getTypeInstance()->getEditLayoutLeft();
     }
+
     /**
      * additional layout block edit
      * @access public
@@ -2359,6 +2418,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getProductAttributeScopeLabel(){
         return $this->_getScopeLabel($this->getProductAttributeScope());
     }
+
     /**
      * get the label for category attribute scope
      * @access public
@@ -2430,6 +2490,7 @@ class Ultimate_ModuleCreator_Model_Entity
         }
         return '';
     }
+
     /**
      * get category attribute group
      * @access public
@@ -2462,6 +2523,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getEntityAttributeSetId() {
         return $this->getTypeInstance()->getEntityAttributeSetId();
     }
+
     /**
      * filter method name
      * @access public
@@ -2537,7 +2599,7 @@ class Ultimate_ModuleCreator_Model_Entity
             $code      = $attribute->getCode();
             if ($attribute->getTypeInstance() instanceof Ultimate_ModuleCreator_Model_Attribute_Type_Multiselect) {
                 $content .= $eol.$padding.'/**'.$eol;
-                $content .= $padding.'  * get '.$attribute->getLabel().$eol;
+                $content .= $padding.'  * Get '.$attribute->getLabel().$eol.$eol;
                 $content .= $padding.'  * @access public'.$eol;
                 $content .= $padding.'  * @return array'.$eol;
                 $content .= $padding.'  * '.$this->getModule()->getQwertyuiop().$eol;
@@ -2582,6 +2644,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getNoStore() {
         return !$this->getStore();
     }
+
     /**
      * get comment name field filter index
      * @access public
@@ -2591,6 +2654,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getCommentFilterIndexPrefix() {
         return $this->getTypeInstance()->getCommentFilterIndexPrefix();
     }
+
     /**
      * additional API subentities.
      * @access public
@@ -2637,6 +2701,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $content .= $this->getTypeInstance()->getApiAdditionalSettings();
         return $content;
     }
+
     /**
      * get subentities acl
      * @access public
@@ -2669,6 +2734,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $content .= $this->getTypeInstance()->getSubEntitiesAcl();
         return $content;
     }
+
     /**
      * get api aliases
      * @access public
@@ -2690,6 +2756,7 @@ class Ultimate_ModuleCreator_Model_Entity
         $content .= $this->getTypeInstance()->getApiResourcesAlias();
         return $content;
     }
+
     /**
      * get api V2 aliases
      * @access public
@@ -2720,6 +2787,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getDefaultApiAttributes(){
         return $this->getTypeInstance()->getDefaultApiAttributes();
     }
+
     /**
      * get the module namespace
      * @access public
@@ -2730,6 +2798,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getNamespace($lower = false){
         return $this->getModule()->getNamespace($lower);
     }
+
     /**
      * get entity name
      * @access public
@@ -2906,6 +2975,7 @@ class Ultimate_ModuleCreator_Model_Entity
     public function getRestCollectionCleanup() {
         return $this->getTypeInstance()->getRestCollectionCleanup();
     }
+
     /**
      * @access public
      * @return string

@@ -1,4 +1,4 @@
-    public function {{siblings}}gridAction(){
+    public function {{siblings}}gridAction() {
         if (!${{entity}} = $this->_init{{Entity}}()) {
             return;
         }

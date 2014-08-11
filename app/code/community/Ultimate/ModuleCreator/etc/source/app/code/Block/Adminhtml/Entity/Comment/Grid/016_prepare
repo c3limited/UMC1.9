@@ -1,13 +1,13 @@
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
+
     /**
      * prepare grid collection
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Comment_Grid
-     * {{qwertyuiop}}
      */
-    protected function _prepareColumns(){
+    protected function _prepareColumns() {
         $this->addColumn('ct_comment_id', array(
             'header'        => Mage::helper('{{namespace}}_{{module}}')->__('Id'),
             'index'         => 'ct_comment_id',

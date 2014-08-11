@@ -9,24 +9,25 @@
 
         return $this;
     }
+
     /**
      * Adds specific store id into array
+     *
      * @access public
      * @param array $storeId
      * @param bool $withAdmin
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Comment_{{Entity}}_Collection
-     * {{qwertyuiop}}
      */
     public function setStoreFilter($storeId, $withAdmin = false) {
         if (is_array($storeId) && isset($storeId['eq'])) {
             $storeId = array_shift($storeId);
         }
 
-        if (!is_array($storeId)){
+        if (!is_array($storeId)) {
             $storeId = array($storeId);
         }
 
-        if (!empty($this->_storesIds)){
+        if (!empty($this->_storesIds)) {
             $this->_storesIds = array_intersect($this->_storesIds, $storeId);
         } else {
             $this->_storesIds = $storeId;
@@ -42,12 +43,11 @@
      * @access protected
      * @param null|Zend_Db_Select $select
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Comment_{{Entity}}_Collection
-     * {{qwertyuiop}}
      */
     protected function _applyStoresFilterToSelect(Zend_Db_Select $select = null) {
         $adapter = $this->getConnection();
         $storesIds = $this->_storesIds;
-        if (is_null($select)){
+        if (is_null($select)) {
             $select = $this->getSelect();
         }
 
@@ -73,19 +73,19 @@
 
     /**
      * Add stores data
+     *
      * @access public
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Comment_{{Entity}}_Collection
-     * {{qwertyuiop}}
      */
     public function addStoreData() {
         $this->_addStoreDataFlag = true;
         return $this;
     }
+
     /**
      * Action after load
      * @access protected
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Comment_{{Entity}}_Collection
-     * {{qwertyuiop}}
      */
     protected function _afterLoad() {
         parent::_afterLoad();
@@ -99,7 +99,6 @@
      * Add store data
      * @access protected
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Comment_{{Entity}}_Collection
-     * {{qwertyuiop}}
      */
     protected function _addStoreData() {
         $adapter = $this->getConnection();
@@ -133,7 +132,6 @@
      * Redeclare parent method for store filters applying
      * @access protected
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Comment_{{Entity}}_Collection
-     * {{qwertyuiop}}
      */
     //protected function _beforeLoad() {
       //  parent::_beforeLoad();

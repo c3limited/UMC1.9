@@ -4,7 +4,6 @@
  * {{module}} rss feeds block
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 ?>
 <?php $_feeds = $this->getFeeds();?>

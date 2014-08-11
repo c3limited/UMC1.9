@@ -1,10 +1,10 @@
     /**
      * wyisiwyg action
+     *
      * @access public
      * @return void
-     * {{qwertyuiop}}
      */
-    public function wysiwygAction(){
+    public function wysiwygAction() {
         $elementId = $this->getRequest()->getParam('element_id', md5(microtime()));
         $storeMediaUrl = Mage::app()->getStore(0)->getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 

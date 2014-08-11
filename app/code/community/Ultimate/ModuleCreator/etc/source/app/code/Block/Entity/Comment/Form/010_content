@@ -11,8 +11,8 @@ class {{Namespace}}_{{Module}}_Block_{{Entity}}_Comment_Form
     extends Mage_Core_Block_Template {
     /**
      * initialize
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function __construct() {
         $customerSession = Mage::getSingleton('customer/session');
@@ -40,20 +40,22 @@ class {{Namespace}}_{{Module}}_Block_{{Entity}}_Comment_Form
         }
         $this->setCommentData($data);
     }
+
     /**
-     * get current {{EntityLabel}}
+     * Get current {{EntityLabel}}
+     *
      * @access public
      * @return {{Namespace}}_{{Module}}_Model_{{Entity}}
-     * {{qwertyuiop}}
      */
     public function get{{Entity}}() {
         return Mage::registry('current_{{entity}}');
     }
+
     /**
-     * get form action
+     * Get form action
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function getAction() {
         return Mage::getUrl('{{namespace}}_{{module}}/{{entity}}/commentpost', array('id' => $this->get{{Entity}}()->getId()));

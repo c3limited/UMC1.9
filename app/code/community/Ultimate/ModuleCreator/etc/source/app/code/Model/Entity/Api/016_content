@@ -15,16 +15,17 @@
         }
         return $result;
     }
+
     /**
      * Add {{entity}}
+     *
      * @access public
      * @param array $data
      * @return array
-     * {{qwertyuiop}}
      */
-    public function add($data){
+    public function add($data) {
         try {
-            if (is_null($data)){
+            if (is_null($data)) {
                 throw new Exception(Mage::helper('{{namespace}}_{{module}}')->__("Data cannot be null"));
             }
             $data = (array)$data;

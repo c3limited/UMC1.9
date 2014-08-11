@@ -5,15 +5,14 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_{{Entity}}_Customer_CommentController
     extends Mage_Core_Controller_Front_Action {
     /**
      * Action predispatch
      * Check customer authentication for some actions
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function preDispatch() {
         parent::preDispatch();
@@ -21,10 +20,11 @@ class {{Namespace}}_{{Module}}_{{Entity}}_Customer_CommentController
             $this->setFlag('', self::FLAG_NO_DISPATCH, true);
         }
     }
+
     /**
      * List comments
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function indexAction() {
         $this->loadLayout();
@@ -42,10 +42,11 @@ class {{Namespace}}_{{Module}}_{{Entity}}_Customer_CommentController
 
         $this->renderLayout();
     }
+
     /**
      * View comment
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function viewAction() {
         $commentId = $this->getRequest()->getParam('id');

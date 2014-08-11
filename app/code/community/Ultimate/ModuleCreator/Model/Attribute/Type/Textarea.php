@@ -58,6 +58,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Textarea
     public function getAdminGrid() {
         return false;
     }
+
     /**
      * get the type for the form
      * @access public
@@ -70,6 +71,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Textarea
         }
         return 'textarea';
     }
+
     /**
      * can use editor
      * @access public
@@ -79,6 +81,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Textarea
     public function getEditor() {
         return $this->getAttribute()->getData('editor');
     }
+
     /**
      * get the options for form input
      * @access public

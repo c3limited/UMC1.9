@@ -5,27 +5,27 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Helper_File
     extends Varien_Data_Form_Element_Abstract {
     /**
      * constructor
+     *
      * @access public
      * @param array $data
-     * {{qwertyuiop}}
      */
-    public function __construct($data){
+    public function __construct($data) {
         parent::__construct($data);
         $this->setType('file');
     }
+
     /**
-     * get element html
+     * Get element html
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getElementHtml(){
+    public function getElementHtml() {
         $html = '';
         $this->addClass('input-file');
         $html.= parent::getElementHtml();
@@ -39,13 +39,13 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Helper_File
         $html.= $this->_getDeleteCheckbox();
         return $html;
     }
+
     /**
-     * get the delete checkbox HTML
+     * Get the delete checkbox HTML
      * @access protected
      * @return string
-     * {{qwertyuiop}}
      */
-    protected function _getDeleteCheckbox(){
+    protected function _getDeleteCheckbox() {
         $html = '';
         if ($this->getValue()) {
             $label = Mage::helper('{{namespace}}_{{module}}')->__('Delete File');
@@ -57,31 +57,32 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Helper_File
         }
         return $html;
     }
+
     /**
-     * get the hidden input
+     * Get the hidden input
      * @access protected
      * @return string
-     * {{qwertyuiop}}
      */
-    protected function _getHiddenInput(){
+    protected function _getHiddenInput() {
         return '<input type="hidden" name="'.parent::getName().'[value]" value="'.$this->getValue().'" />';
     }
+
     /**
-     * get the file url
+     * Get the file url
      * @access protected
      * @return string
-     * {{qwertyuiop}}
      */
-    protected function _getUrl(){
+    protected function _getUrl() {
         return $this->getValue();
     }
+
     /**
-     * get the name
+     * Get the name
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getName(){
+    public function getName() {
         return $this->getData('name');
     }
 }

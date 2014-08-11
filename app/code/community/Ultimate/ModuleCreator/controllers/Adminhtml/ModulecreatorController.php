@@ -61,6 +61,7 @@ class Ultimate_ModuleCreator_Adminhtml_ModulecreatorController
     public function newAction() {
         $this->_forward('edit');
     }
+
     /**
      * edit action
      * @access public
@@ -81,6 +82,7 @@ class Ultimate_ModuleCreator_Adminhtml_ModulecreatorController
         $this->loadLayout();
         $this->renderLayout();
     }
+
     /**
      * init module
      * @access protected
@@ -109,6 +111,7 @@ class Ultimate_ModuleCreator_Adminhtml_ModulecreatorController
         }
         return false;
     }
+
     /**
      * init a module from an array
      * @access public
@@ -194,6 +197,7 @@ class Ultimate_ModuleCreator_Adminhtml_ModulecreatorController
         }
         $this->getResponse()->setBody($response->toJson());
     }
+
     /**
      * save module - actually only redirects the page
      * the save was done in validateAction(). there is no need to process the request twice.
@@ -215,6 +219,7 @@ class Ultimate_ModuleCreator_Adminhtml_ModulecreatorController
             $this->_redirect('*/*/');
         }
     }
+
     /**
      * download module action
      * @access public

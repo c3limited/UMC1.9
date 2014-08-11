@@ -73,6 +73,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
         $entity     = $this->getEntity()->getNameSingular(true);
         return $namespace.'_'.$module.'/'.$entity.'_attribute_source_'.$this->getAttribute()->getCodeForFileName();
     }
+
     /**
      * get admin column options
      * @return string
@@ -93,6 +94,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
         }
         return $options;
     }
+
     /**
      * get the type for the form
      * @access public
@@ -102,6 +104,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
     public function getFormType(){
         return 'select';
     }
+
     /**
      * get text for rss
      * @access public
@@ -123,6 +126,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
             return $this->getPadding(3).'$description .= \'<div>\'.Mage::helper(\''.$namespace.'_'.$module.'\')->__("'.$this->getAttribute()->getLabel().'").\': \'.Mage::getSingleton(\''.$namespace.'_'.$module.'/'.$entityName.'_attribute_source_'.$attributeFile.'\')->getOptionText($item->get'.$code.'()).\'</div>\';'.$this->getEol();
         }
     }
+
     /**
      * check if source needs to be generated
      * @access public
@@ -132,6 +136,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
     public function getGenerateSource(){
         return $this->getSubTypeInstance()->getGenerateSource();
     }
+
     /**
      * get subtype instance
      * @access public
@@ -154,6 +159,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
         }
         return $this->_subTypeInstance;
     }
+
     /**
      * get additional setup values
      * @access public
@@ -163,6 +169,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
     public function getAdditionalSetup(){
         return $this->getSubTypeInstance()->getAdditionalSetup();
     }
+
     /**
      * get html for frontend
      * @access public
@@ -183,6 +190,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
             return '<?php echo Mage::helper(\''.$namespace.'_'.$module.'\')->__("'.$this->getAttribute()->getLabel().'");?>:<?php echo Mage::getSingleton(\''.$namespace.'_'.$module.'/'.$entityName.'_attribute_source_'.$attributeFile.'\')->getOptionText($_'.$entityName.'->get'.$code.'())'.';?>'.$this->getEol();
         }
     }
+
     /**
      * get attribute options for source model
      * @access public
@@ -192,6 +200,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
     public function getAttributeOptions(){
         return $this->getSubTypeInstance()->getAttributeOptions();
     }
+
     /**
      * get the options for form input
      * @access public
@@ -220,6 +229,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
     public function getOptionsFlag() {
         return 'true';
     }
+
     /**
      * get the setup type of the dropdown
      * @access public
@@ -233,6 +243,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
         }
         return $setupType;
     }
+
     /**
      * get the setup type of the dropdown
      * @access public
@@ -246,6 +257,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
         }
         return $setupType;
     }
+
     /**
      * get column ddl size
      * @access public
@@ -259,6 +271,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
         }
         return $size;
     }
+
     /**
      * get values for mass action
      * @access public
@@ -286,6 +299,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown
     public function getDefaultValueProcessed() {
         return $this->getSubTypeInstance()->getDefaultValueProcessed();
     }
+
     /**
      * get attribute default value setup content
      * @access public

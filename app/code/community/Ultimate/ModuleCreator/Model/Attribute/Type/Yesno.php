@@ -69,6 +69,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Yesno
         $options   .= $this->getPadding(3).")".$eol;
         return $options;
     }
+
     /**
      * get the type for the form
      * @access public
@@ -78,6 +79,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Yesno
     public function getFormType() {
         return 'select';
     }
+
     /**
      * get text for rss
      * @access public
@@ -91,6 +93,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Yesno
         $namespace  = $this->getNamespace(true);
         return $this->getPadding(3).'$description .= \'<div>\'.Mage::helper(\''.$namespace.'_'.$module.'\')->__("'.$this->getAttribute()->getLabel().'").\':\'.(($item->get'.$this->getAttribute()->getMagicMethodCode().'() == 1) ? Mage::helper(\''.$namespace.'_'.$module.'\')->__(\'Yes\') : Mage::helper(\''.$namespace.'_'.$module.'\')->__(\'No\')).\'</div>\';'.$this->getEol();
     }
+
     /**
      * get html for frontend
      * @access public
@@ -104,6 +107,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Yesno
         $namespace  = $this->getNamespace(true);
         return '<?php echo Mage::helper(\''.$namespace.'_'.$module.'\')->__("'.$this->getAttribute()->getLabel().'");?>:<?php echo ($_'.$entityName.'->get'.$this->getAttribute()->getMagicMethodCode().'() == 1)?Mage::helper(\''.$module.'\')->__(\'Yes\'):Mage::helper(\''.$module.'\')->__(\'No\') ?>'.$this->getEol();
     }
+
     /**
      * check if attribute is yes/no
      * @access public
@@ -113,6 +117,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Yesno
     public function getIsYesNo(){
         return true;
     }
+
     /**
      * get the options for form input
      * @access public
@@ -138,6 +143,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Yesno
         $options .= $padding."),".$eol;
         return $options;
     }
+
     /**
      * get values for mass action
      * @access public

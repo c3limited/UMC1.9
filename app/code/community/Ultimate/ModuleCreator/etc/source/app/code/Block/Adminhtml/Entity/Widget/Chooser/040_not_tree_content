@@ -1,13 +1,13 @@
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
+
     /**
      * Prepare columns for the a grid
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Widget_Chooser
-     * {{qwertyuiop}}
      */
-    protected function _prepareColumns(){
+    protected function _prepareColumns() {
         $this->addColumn('chooser_id', array(
             'header'    => Mage::helper('{{namespace}}_{{module}}')->__('Id'),
             'align'     => 'right',

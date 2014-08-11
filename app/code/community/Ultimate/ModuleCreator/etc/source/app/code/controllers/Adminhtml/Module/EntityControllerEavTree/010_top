@@ -5,7 +5,6 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}Controller
     extends Mage_Adminhtml_Controller_Action {
@@ -15,7 +14,6 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}Controller
      * @access protected
      * @param bool $getRootInstead
      * @return {{Namespace}}_{{Module}}_Model_{{Entity}}
-     * {{qwertyuiop}}
      */
     protected function _init{{Entity}}($getRootInstead = false) {
         $this->_title($this->__('{{module_menu}}'))
@@ -51,10 +49,11 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}Controller
         Mage::getSingleton('cms/wysiwyg_config')->setStoreId($this->getRequest()->getParam('store'));
         return ${{entity}};
     }
+
     /**
      * index action
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function indexAction() {
         $this->_forward('edit');
@@ -62,8 +61,8 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}Controller
 
     /**
      * Add new {{entityLabel}} form
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function addAction() {
         Mage::getSingleton('admin/session')->uns{{Entity}}ActiveTabId();
@@ -183,8 +182,8 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}Controller
 
     /**
      * WYSIWYG editor action for ajax request
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function wysiwygAction() {
         $elementId = $this->getRequest()->getParam('element_id', md5(microtime()));
@@ -202,8 +201,8 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}Controller
 
     /**
      * Get tree node (Ajax version)
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function {{entities}}JsonAction() {
         if ($this->getRequest()->getParam('expand_all')) {
@@ -226,8 +225,8 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}Controller
 
     /**
      * {{EntityLabel}} save
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function saveAction() {
         if (!${{entity}} = $this->_init{{Entity}}()) {

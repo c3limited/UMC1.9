@@ -69,6 +69,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
         }
         return $this;
     }
+
     /**
      * get the relation type
      * @access public
@@ -78,6 +79,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
     public function getType(){
         return $this->_type;
     }
+
     /**
      * get relation entities
      * @access public
@@ -87,6 +89,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
     public function getEntities(){
         return array($this->_entity1, $this->_entity2);
     }
+
     /**
      * relation to xml
      * @access protected
@@ -112,6 +115,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
         }
         return $xml;
     }
+
     /**
      * check if siblings can be listed in the entity view page
      * @access public
@@ -128,6 +132,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
         $e = $entities[$index];
         return $e->getCreateView();
     }
+
     /**
      * check if children can be listed in the parent view page
      * @access public
@@ -148,6 +153,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
         $e = $entities[$index];
         return $e->getCreateView();
     }
+
     /**
      * check if a relations has tree entities
      * @access public
@@ -157,6 +163,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
     public function getHasTree(){
         return $this->_entity1->getIsTree() || $this->_entity2->getIsTree();
     }
+
     /**
      * check if a relations doesn not have tree entities
      * @access public
@@ -166,6 +173,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
     public function getNotHasTree(){
         return !$this->getHasTree();
     }
+
     /**
      * check if one of the entities behaves as tree
      * @access public
@@ -177,6 +185,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
         $entities = $this->getEntities();
         return $entities[$index]->getIsTree();
     }
+
     /**
      * check if one of the entities behaves as tree
      * @access public
@@ -187,6 +196,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
     public function getSiblingIsTree($index){
         return $this->getEntityIsTree(1 - $index);
     }
+
     /**
      * check if one of the entities does not behave as tree
      * @access public
@@ -197,6 +207,7 @@ class Ultimate_ModuleCreator_Model_Relation extends Ultimate_ModuleCreator_Model
     public function getSiblingIsNotTree($index){
         return !$this->getSiblingIsTree($index);
     }
+
     /**
      * check if entity has API
      * @access public

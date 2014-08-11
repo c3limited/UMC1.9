@@ -5,7 +5,6 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Model_Api2_{{Entity}}_Rest_Admin_V1
     extends {{Namespace}}_{{Module}}_Model_Api2_{{Entity}}_Rest {
@@ -17,7 +16,6 @@ class {{Namespace}}_{{Module}}_Model_Api2_{{Entity}}_Rest_Admin_V1
      * @param array $keys
      * @param bool $dropOrigKeys if true - return array as indexed array
      * @return array
-     * {{qwertyuiop}}
      */
     protected function _filterOutArrayKeys(array $array, array $keys, $dropOrigKeys = false) {
         $isIndexedArray = is_array(reset($array));
@@ -41,7 +39,6 @@ class {{Namespace}}_{{Module}}_Model_Api2_{{Entity}}_Rest_Admin_V1
      * Retrieve list of {{entitiesLabel}}
      * @access protected
      * @return array
-     * {{qwertyuiop}}
      */
     protected function _retrieveCollection() {
-        $collection = Mage::getResourceModel('{{namespace}}_{{module}}/{{entity}}_collection'){{allAttributesToCollection}};{{restCollectionStoreId}}
+        $collection = Mage::getResourceModel('{{namespace}}_{{module}}/{{entity}}_collection') {{allAttributesToCollection}};{{restCollectionStoreId}}

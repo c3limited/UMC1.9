@@ -53,6 +53,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         }
         return $result;
     }
+
     /**
      * get admin join
      * @access public
@@ -109,6 +110,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getHasImage(){
         return true;
     }
+
     /**
      * eav always has files
      * @access public
@@ -118,6 +120,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getHasFile(){
         return true;
     }
+
     /**
      * eav always has submenu
      * @access public
@@ -127,6 +130,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getHasSubmenu(){
         return true;
     }
+
     /**
      * get additional menu
      * @access public
@@ -171,6 +175,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $text .= $this->getPadding($padding).'</'.$entity.'_attributes>'.$eol;
         return $text;
     }
+
     /**
      * allow comments by store
      * @access public
@@ -242,6 +247,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         }
         return $content;
     }
+
     /**
      * get parent class for the entity resource model
      * @access public
@@ -251,6 +257,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getResourceModelParent(){
         return 'Mage_Catalog_Model_Resource_Abstract';
     }
+
     /**
      * get parent class for the entity resource collection model
      * @access public
@@ -260,6 +267,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getResourceCollectionModelParent(){
         return 'Mage_Catalog_Model_Resource_Collection_Abstract';
     }
+
     /**
      * get related entities relations table
      * @access public
@@ -287,6 +295,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         }
         return $content;
     }
+
     /**
      * get related entities relations table declaration
      * @access public
@@ -313,6 +322,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         }
         return $content;
     }
+
     /**
      * get admin layout content for index page
      * @access public
@@ -331,6 +341,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $content   .= $this->getPadding(3).'</block>'.$eol;
         return $content;
     }
+
     /**
      * get the parent model class
      * @access public
@@ -340,6 +351,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getEntityParentModel() {
         return 'Mage_Catalog_Model_Abstract';
     }
+
     /**
      * get entity table alias
      * @access public
@@ -349,6 +361,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getEntityTableAlias() {
         return 'e';
     }
+
     /**
      * get additional prepare collection
      * @access public
@@ -358,6 +371,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getAdditionalPrepareCollection(){
         return "->addAttributeToSelect('".$this->getEntity()->getNameAttributeCode()."')";
     }
+
     /**
      * additional layout block for left section
      * @access public
@@ -367,6 +381,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getEditLayoutLeft() {
         return '<block type="adminhtml/store_switcher" name="store_switcher" before="-"></block>'.$this->getEol().$this->getPadding(3);
     }
+
     /**
      * additional layout block edit
      * @access public
@@ -384,6 +399,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $content .= $this->getPadding(2).'</reference>';
         return $content;
     }
+
     /**
      * get param name for before save
      * @access public
@@ -393,6 +409,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getBeforeSaveParam() {
         return 'Varien_Object';
     }
+
     /**
      * entity attribute set string
      * @access public
@@ -405,6 +422,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $entity     = $this->getEntity()->getNameSingular(true);
         return $this->getEol().$this->getPadding()."->setAttributeSetId(Mage::getModel('".$namespace.'_'.$module.'/'.$entity."')->getDefaultAttributeSetId())";
     }
+
     /**
      * filter method name
      * @access public
@@ -414,6 +432,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getFilterMethod() {
         return 'addAttributeToFilter';
     }
+
     /**
      * convert multiple select fields to strings
      * @access public
@@ -423,6 +442,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getMultipleSelectConvert(){
         return $this->getEol();
     }
+
     /**
      * check if the entity helper can be created
      * @access public
@@ -432,6 +452,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getCanCreateEntityHelper(){
         return true;
     }
+
     /**
      * get additional code for toOptionArray()
      * @access public
@@ -442,6 +463,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $attribute = $this->getEntity()->getNameAttributeCode();
         return '$this->addAttributeToSelect(\''.$attribute.'\');'.$this->getEol().$this->getPadding(2);
     }
+
     /**
      * get comment name field filter index
      * @access public
@@ -451,6 +473,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getCommentFilterIndexPrefix() {
         return '';
     }
+
     /**
      * get additional api xml
      * @access public
@@ -471,6 +494,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $content .= $padding.'</listOfAdditionalAttributes>'.$eol;
         return $content;
     }
+
     /**
      * get additional api faults
      * @access public
@@ -488,6 +512,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $content .= $padding.'</store_not_exists>'.$eol;
         return $content;
     }
+
     /**
      * additional API subentities.
      * @access public
@@ -649,6 +674,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $content .= $padding.'</'.$entity.'_attribute>'.$eol;
         return $content;
     }
+
     /**
      * get api aliases
      * @access public
@@ -666,6 +692,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $content .= $padding.'<'.$entity.'_attribute>'.$module.'_'.$entity.'_attribute</'.$entity.'_attribute>';
         return $content;
     }
+
     /**
      * get api V2 aliases
      * @access public
@@ -683,6 +710,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $content .= $padding.'<'.$entity.'_attribute>'.$module.ucfirst($entity).'Attribute</'.$entity.'_attribute>';
         return $content;
     }
+
     /**
      * get attributes format for wsdl
      * @access public
@@ -705,6 +733,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         }
         return $content;
     }
+
     /**
      * get default api attributes
      * @access public
@@ -735,6 +764,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
         $content .= $padding.');'.$eol;
         return $content;
     }
+
     /**
      * get add all attributes to collection
      * @access public
@@ -744,6 +774,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getAllAttributesToCollection() {
         return '->addAttributeToSelect(\'*\')';
     }
+
     /**
      * get load store id statement
      * @access public
@@ -753,6 +784,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getLoadStoreId() {
         return '->setStoreId(Mage::app()->getStore()->getId())';
     }
+
     /**
      * @access public
      * @return string
@@ -761,6 +793,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getRestCollectionCleanup() {
         return '';
     }
+
     /**
      * @access public
      * @return string
@@ -769,6 +802,7 @@ class Ultimate_ModuleCreator_Model_Entity_Type_Eav extends Ultimate_ModuleCreato
     public function getRestCollectionStoreId() {
         return $this->getEol().$this->getPadding(2).'$collection->setStoreId($this->_getStore()->getId());';
     }
+
     /**
      * @access public
      * @return string

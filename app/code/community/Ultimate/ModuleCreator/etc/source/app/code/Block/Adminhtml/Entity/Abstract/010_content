@@ -5,24 +5,24 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Abstract
     extends Mage_Adminhtml_Block_Template {
     /**
-     * get current {{entityLabel}}
+     * Get current {{entityLabel}}
+     *
      * @access public
      * @return {{Namespace}}_{{Module}}_Model_Entity
-     * {{qwertyuiop}}
      */
     public function get{{Entity}}() {
         return Mage::registry('{{entity}}');
     }
+
     /**
-     * get current {{entityLabel}} id
+     * Get current {{entityLabel}} id
+     *
      * @access public
      * @return int
-     * {{qwertyuiop}}
      */
     public function get{{Entity}}Id() {
         if ($this->get{{Entity}}()) {
@@ -30,20 +30,22 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Abstract
         }
         return null;
     }
+
     /**
-     * get current {{entityLabel}} {{nameAttributeLabel}}
+     * Get current {{entityLabel}} {{nameAttributeLabel}}
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function get{{Entity}}{{EntityNameMagicCode}}() {
         return $this->get{{Entity}}()->get{{EntityNameMagicCode}}();
     }
+
     /**
-     * get current {{entityLabel}} path
+     * Get current {{entityLabel}} path
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function get{{Entity}}Path() {
         if ($this->get{{Entity}}()) {
@@ -51,11 +53,12 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Abstract
         }
         return Mage::helper('{{namespace}}_{{module}}/{{entity}}')->getRoot{{Entity}}Id();
     }
+
     /**
      * check if there is a root {{entityLabel}}
+     *
      * @access public
      * @return bool
-     * {{qwertyuiop}}
      */
     public function hasRoot{{Entity}}() {
         $root = $this->getRoot();
@@ -64,13 +67,13 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Abstract
         }
         return false;
     }
+
     /**
-     * get the root
+     * Get the root
      * @access publoc
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}}|null $parentNode{{Entity}}
      * @param int $recursionLevel
      * @return Varien_Data_Tree_Node
-     * {{qwertyuiop}}
      */
     public function getRoot($parentNode{{Entity}} = null, $recursionLevel = 3) {
         if (!is_null($parentNode{{Entity}}) && $parentNode{{Entity}}->getId()) {
@@ -102,7 +105,6 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Abstract
      * @accsess public
      * @param array $ids
      * @return Varien_Data_Tree_Node
-     * {{qwertyuiop}}
      */
     public function getRootByIds($ids) {
         $root = Mage::registry('root');
@@ -123,13 +125,14 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Abstract
         }
         return $root;
     }
+
     /**
-     * get specific node
+     * Get specific node
+     *
      * @access public
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}} $parentNode{{Entity}}
      * @param $int $recursionLevel
      * @return Varien_Data_Tree_Node
-     * {{qwertyuiop}}
      */
     public function getNode($parentNode{{Entity}}, $recursionLevel = 2) {
         $tree = Mage::getResourceModel('{{namespace}}_{{module}}/{{entity}}_tree');
@@ -146,33 +149,36 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Abstract
         $tree->addCollectionData($this->get{{Entity}}Collection());
         return $node;
     }
+
     /**
-     * get url for saving data
+     * Get url for saving data
+     *
      * @access public
      * @param array $args
      * @return string
-     * {{qwertyuiop}}
      */
     public function getSaveUrl(array $args = array()) {
         $params = array('_current'=>true);
         $params = array_merge($params, $args);
         return $this->getUrl('*/*/save', $params);
     }
+
     /**
-     * get url for edit
+     * Get url for edit
+     *
      * @access public
      * @param array $args
      * @return string
-     * {{qwertyuiop}}
      */
     public function getEditUrl() {
         return $this->getUrl("*/{{module}}_{{entity}}/edit", array('_current'=>true, '_query'=>false, 'id'=>null, 'parent'=>null));
     }
+
     /**
      * Return root ids
+     *
      * @access public
      * @return array
-     * {{qwertyuiop}}
      */
     public function getRootIds() {
         return array(Mage::helper('{{namespace}}_{{module}}/{{entity}}')->getRoot{{Entity}}Id());

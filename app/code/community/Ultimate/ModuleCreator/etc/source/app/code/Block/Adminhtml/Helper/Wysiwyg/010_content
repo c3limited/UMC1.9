@@ -4,17 +4,16 @@
  * {{Module}} textarea attribute WYSIWYG button
  * @category   {{Namespace}}
  * @package    {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Block_Adminhtml_Helper_Wysiwyg
     extends Varien_Data_Form_Element_Textarea {
     /**
      * Retrieve additional html and put it at the end of element html
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getAfterElementHtml(){
+    public function getAfterElementHtml() {
         $html = parent::getAfterElementHtml();
         $disabled = ($this->getDisabled() || $this->getReadonly());
         $html .= Mage::getSingleton('core/layout')

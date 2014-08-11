@@ -1,12 +1,12 @@
     /**
      * Save {{entity}} - category relations
+     *
      * @access public
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}} ${{entity}}
      * @param array $data
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Category
-     * {{qwertyuiop}}
      */
-    public function save{{Entity}}Relation(${{entity}}, $data){
+    public function save{{Entity}}Relation(${{entity}}, $data) {
         if (!is_array($data)) {
             $data = array();
         }
@@ -14,7 +14,7 @@
         $this->_getWriteAdapter()->delete($this->getMainTable(), $deleteCondition);
 
         foreach ($data as $categoryId) {
-            if (!empty($categoryId)){
+            if (!empty($categoryId)) {
                 $insert = array(
                     '{{entity}}_id'      => ${{entity}}->getId(),
                     'category_id'     => $categoryId,
@@ -25,15 +25,17 @@
         }
         return $this;
     }
+
     /**
      * Save  category - {{entity}} relations
+     *
      * @access public
      * @param Mage_Catalog_Model_Category $category
      * @param array $data
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Category
      * @{{qwertyuiop}}
      */
-    public function saveCategoryRelation($category, $data){
+    public function saveCategoryRelation($category, $data) {
         if (!is_array($data)) {
             $data = array();
         }

@@ -6,7 +6,6 @@
      * @param bool $sorted
      * @param array $optionalAttributes
      * @return Zend_Db_Select
-     * {{qwertyuiop}}
      */
     protected function _createCollectionDataSelect($sorted = true, $optionalAttributes = array()) {
         $select = $this->_getDefaultCollection($sorted ? $this->_orderField : false)
@@ -44,12 +43,13 @@
         }
         return $select;
     }
+
     /**
      * Set store Id
+     *
      * @access public
      * @param integer $storeId
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Tree
-     * {{qwertyuiop}}
      */
     public function setStoreId($storeId) {
         $this->_storeId = $storeId;
@@ -58,9 +58,9 @@
 
     /**
      * Return store id
+     *
      * @access public
      * @return integer
-     * {{qwertyuiop}}
      */
     public function getStoreId() {
         if ($this->_storeId === null) {

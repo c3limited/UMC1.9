@@ -38,6 +38,7 @@ class Ultimate_ModuleCreator_Model_Source_Codepool {
         $options[] = array('value' => 'community',     'label'=>'community');
         return $options;
     }
+
     /**
      * get options as an array
      * @access public
@@ -52,6 +53,7 @@ class Ultimate_ModuleCreator_Model_Source_Codepool {
         }
         return $options;
     }
+
     /**
     * get options as an array - wrapper
     * @param bool $withEmpty

@@ -12,11 +12,11 @@
         ${{entities}}Array = ${{entities}}->toArray();{{restCollectionCleanup}}
         return ${{entities}}Array;
     }
+
     /**
      * Delete {{entityLabel}} by its ID
      * @access protected
      * @throws Mage_Api2_Exception
-     * {{qwertyuiop}}
      */
     protected function _delete() {
         ${{entity}} = $this->_get{{Entity}}();
@@ -34,7 +34,6 @@
      * @access protected
      * @param array $data
      * @return string
-     * {{qwertyuiop}}
      */
     protected function _create(array $data) {
         ${{entity}} = Mage::getModel('{{namespace}}_{{module}}/{{entity}}')->setData($data);
@@ -53,7 +52,6 @@
      * Update {{entityLabel}} by its ID
      * @access protected
      * @param array $data
-     * {{qwertyuiop}}
      */
     protected function _update(array $data) {
         ${{entity}} = $this->_get{{Entity}}();
@@ -72,7 +70,6 @@
      * @access protected
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}} $entity
      * @param array ${{entity}}Data
-     * {{qwertyuiop}}
      */
     protected function _prepareDataForSave($product, $productData) {
         //add your data processing algorithm here if needed

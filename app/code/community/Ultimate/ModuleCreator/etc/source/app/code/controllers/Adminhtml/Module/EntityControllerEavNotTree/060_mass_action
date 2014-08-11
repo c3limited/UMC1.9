@@ -1,14 +1,14 @@
     /**
      * mass {{attributeLabel}} change
+     *
      * @access public
      * @return void
-     * {{qwertyuiop}}
      */
-    public function mass{{AttributeMagicCode}}Action(){
+    public function mass{{AttributeMagicCode}}Action() {
         ${{entity}}Ids = (array)$this->getRequest()->getParam('{{entity}}');
         $storeId    = (int)$this->getRequest()->getParam('store', 0);
         $flag     = (int)$this->getRequest()->getParam('flag_{{attributeCode}}');
-        if ($flag == 2){
+        if ($flag == 2) {
             $flag = 0;
         }
         try {

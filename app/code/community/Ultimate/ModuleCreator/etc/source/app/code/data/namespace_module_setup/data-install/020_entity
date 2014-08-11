@@ -6,5 +6,5 @@ Mage::getModel('{{namespace}}_{{module}}/{{entity}}')
     ->setPosition(0)
     ->setChildrenCount(0)
     ->set{{EntityNameMagicCode}}('ROOT')
-    ->setInitialSetupFlag(true){{EntityAttributeSetId}}
+    ->setInitialSetupFlag(true) {{EntityAttributeSetId}}
     ->save();

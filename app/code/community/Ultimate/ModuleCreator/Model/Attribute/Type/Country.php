@@ -52,6 +52,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Country
         $options .= "'type'=> 'country',".$this->getEol();
         return $options;
     }
+
     /**
      * get the type for the form
      * @access public
@@ -75,6 +76,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Country
         $namespace  = $this->getNamespace(true);
         return $this->getPadding(3).'$description .= \'<div>\'.Mage::helper(\''.$namespace.'_'.$module.'\')->__("'.$this->getAttribute()->getLabel().'").\':\'.(($item->get'.$this->getAttribute()->getMagicMethodCode().'()) ? Mage::getModel(\'directory/country\')->load($item->get'.$this->getAttribute()->getMagicMethodCode().'())->getName():Mage::helper(\''.$namespace.'_'.$module.'\')->__(\'None\')).\'</div>\';'.$this->getEol();
     }
+
     /**
      * get html for frontend
      * @access public
@@ -91,6 +93,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Country
         }
         return '<?php echo Mage::helper(\''.$namespace.'_'.$module.'\')->__("'.$this->getAttribute()->getLabel().'");?>:<?php echo ($_'.$entityName.'->get'.$this->getAttribute()->getMagicMethodCode().'()) ? Mage::getModel(\'directory/country\')->load($_'.$entityName.'->get'.$this->getAttribute()->getMagicMethodCode().'())->getName():Mage::helper(\''.$namespace.'_'.$module.'\')->__(\'None\') ?>'.$this->getEol();
     }
+
     /**
      * get source for setup
      * @access public
@@ -102,6 +105,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Country
         $namespace  = $this->getNamespace(true);
         return $namespace.'_'.$module.'/attribute_source_country';
     }
+
     /**
      * get admin from options
      * @access public
@@ -114,6 +118,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Country
         $options .= $this->getPadding(3)."'values'=> Mage::getResourceModel('directory/country_collection')->toOptionArray(),".$this->getEol();
         return $options;
     }
+
     /**
      * get values for mass action
      * @access public

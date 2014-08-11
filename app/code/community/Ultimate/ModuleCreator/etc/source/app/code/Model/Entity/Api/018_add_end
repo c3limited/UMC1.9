@@ -13,13 +13,13 @@
 
     /**
      * Change existing {{entity}} information
+     *
      * @access public
      * @param int ${{entity}}Id
      * @param array $data
      * @return bool
-     * {{qwertyuiop}}
      */
-    public function update(${{entity}}Id, $data){
+    public function update(${{entity}}Id, $data) {
         ${{entity}} = $this->_init{{Entity}}(${{entity}}Id);
         try {
             $data = (array)$data;

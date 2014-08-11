@@ -6,7 +6,7 @@
      * @param int $afterId
      * @return boolean
      */
-    public function move(${{entity}}Id, $parentId, $afterId = null){
+    public function move(${{entity}}Id, $parentId, $afterId = null) {
         ${{entity}} = $this->_init{{Entity}}(${{entity}}Id);
         $parent_{{entity}} = $this->_init{{Entity}}($parentId);
         if ($afterId === null && $parent_{{entity}}->hasChildren()) {

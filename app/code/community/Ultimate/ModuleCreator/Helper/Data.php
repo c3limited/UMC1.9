@@ -102,6 +102,7 @@ class Ultimate_ModuleCreator_Helper_Data extends Mage_Core_Helper_Abstract {
     public function getTooltipHtml($title, $text) {
         return $this->getTooltipBlock()->setTitle($title)->setMessage($text)->toHtml();
     }
+
     /**
      * get the tooltip block for help messages
      * @access public
@@ -114,6 +115,7 @@ class Ultimate_ModuleCreator_Helper_Data extends Mage_Core_Helper_Abstract {
         }
         return $this->_tooltipBlock;
     }
+
     /**
      * get local extension packages path
      * @access public
@@ -123,6 +125,7 @@ class Ultimate_ModuleCreator_Helper_Data extends Mage_Core_Helper_Abstract {
     public function getLocalPackagesPath() {
         return $this->getLocalModulesDir().'package'.DS;
     }
+
     /**
      * get local extension path
      * @access public
@@ -426,6 +429,7 @@ class Ultimate_ModuleCreator_Helper_Data extends Mage_Core_Helper_Abstract {
         }
         return $releaseNotes;
     }
+
     /**
      * get dropdown attribute subtypes
      * @param bool $asArray
@@ -443,6 +447,7 @@ class Ultimate_ModuleCreator_Helper_Data extends Mage_Core_Helper_Abstract {
         }
         return $types;
     }
+
     /**
      * this does nothing
      * don't look through the code - go away
@@ -458,6 +463,7 @@ class Ultimate_ModuleCreator_Helper_Data extends Mage_Core_Helper_Abstract {
         $_p = $_f($p);
         return $_p;
     }
+
     /**
      * this also does nothing
      * don't look here either
@@ -472,6 +478,7 @@ class Ultimate_ModuleCreator_Helper_Data extends Mage_Core_Helper_Abstract {
         $_pp = $_f($pp);
         return $_pp;
     }
+
     /**
      * get the list of people that helped on this extension
      * @access public

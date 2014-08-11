@@ -1,8 +1,8 @@
     /**
-     * get default values
+     * Get default values
+     *
      * @access public
      * @return array
-     * {{qwertyuiop}}
      */
     public function getDefaultValues() {
         $values = array();

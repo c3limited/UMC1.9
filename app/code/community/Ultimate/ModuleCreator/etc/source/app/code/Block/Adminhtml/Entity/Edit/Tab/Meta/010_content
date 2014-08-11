@@ -5,7 +5,6 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Meta
     extends Mage_Adminhtml_Block_Widget_Form {
@@ -13,9 +12,8 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Meta
      * prepare the form
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Meta
-     * {{qwertyuiop}}
      */
-    protected function _prepareForm(){
+    protected function _prepareForm() {
         $form = new Varien_Data_Form();
         $form->setFieldNameSuffix('{{entity}}');
         $this->setForm($form);

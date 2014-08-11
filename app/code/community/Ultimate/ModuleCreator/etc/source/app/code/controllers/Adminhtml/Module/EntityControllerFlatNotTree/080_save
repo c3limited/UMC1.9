@@ -8,4 +8,4 @@
                 $this->_redirect('*/*/');
                 return;
             }
-            catch (Mage_Core_Exception $e){
+            catch (Mage_Core_Exception $e) {

@@ -4,13 +4,13 @@
       * @return void
       * {{qwertyuiop}}
       */
-    public function indexAction(){
+    public function indexAction() {
          $this->loadLayout();
          $this->_initLayoutMessages('catalog/session');
          $this->_initLayoutMessages('customer/session');
          $this->_initLayoutMessages('checkout/session');
-         if (Mage::helper('{{namespace}}_{{module}}/{{entity}}')->getUseBreadcrumbs()){
-             if ($breadcrumbBlock = $this->getLayout()->getBlock('breadcrumbs')){
+         if (Mage::helper('{{namespace}}_{{module}}/{{entity}}')->getUseBreadcrumbs()) {
+             if ($breadcrumbBlock = $this->getLayout()->getBlock('breadcrumbs')) {
                  $breadcrumbBlock->addCrumb('home', array(
                             'label'    => Mage::helper('{{namespace}}_{{module}}')->__('Home'),
                             'link'     => Mage::getUrl(),

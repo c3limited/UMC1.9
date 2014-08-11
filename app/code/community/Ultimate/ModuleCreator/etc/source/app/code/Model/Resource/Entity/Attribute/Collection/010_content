@@ -5,7 +5,6 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Attribute_Collection
     extends Mage_Eav_Model_Resource_Entity_Attribute_Collection {
@@ -24,30 +23,31 @@ class {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Attribute_Collection
             );
         return $this;
     }
+
     /**
      * set entity type filter
+     *
      * @access public
      * @param string $typeId
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Attribute_Collection
-     * {{qwertyuiop}}
      */
  	public function setEntityTypeFilter($typeId) {
         return $this;
     }
 	/**
      * Specify filter by "is_visible" field
+     *
      * @access public
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Attribute_Collection
-     * {{qwertyuiop}}
      */
     public function addVisibleFilter() {
         return $this->addFieldToFilter('additional_table.is_visible', 1);
     }
 	/**
      * Specify filter by "is_editable" field
+     *
      * @access public
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Attribute_Collection
-     * {{qwertyuiop}}
      */
     public function addEditableFilter() {
         return $this->addFieldToFilter('additional_table.is_editable', 1);

@@ -43,6 +43,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_File
     public function getAdminGrid() {
         return false;
     }
+
     /**
      * check if attribute is required
      * @access public
@@ -52,6 +53,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_File
     public function getRequired(){
         return false;
     }
+
     /**
      * get the type for the form
      * @access public
@@ -61,6 +63,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_File
     public function getFormType() {
         return 'file';
     }
+
     /**
      * get text for rss
      * @access public
@@ -106,6 +109,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_File
         $content   .= $this->getPadding().'<?php endif;?>'.$eol;
         return $content;
     }
+
     /**
      * get the setup backend type
      * @access public
@@ -118,6 +122,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_File
         $module = $this->getModule();
         return $this->getNamespace(true).'_'.$module->getLowerModuleName().'/'.$entity->getNameSingular(true).'_attribute_backend_file';
     }
+
     /**
      * get attribute default value
      * @access public

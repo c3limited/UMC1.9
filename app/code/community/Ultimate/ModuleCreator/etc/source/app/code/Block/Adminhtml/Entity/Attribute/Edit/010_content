@@ -5,14 +5,13 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Attribute_Edit
     extends Mage_Adminhtml_Block_Widget_Form_Container {
     /**
      * constructor
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function __construct() {
         $this->_objectId = 'attribute_id';
@@ -38,13 +37,14 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Attribute_Edit
             $this->_updateButton('delete', 'label', Mage::helper('{{namespace}}_{{module}}')->__('Delete {{EntityLabel}} Attribute'));
         }
     }
+
     /**
-     * get the header text for the form
+     * Get the header text for the form
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getHeaderText(){
+    public function getHeaderText() {
         if (Mage::registry('entity_attribute')->getId()) {
             $frontendLabel = Mage::registry('entity_attribute')->getFrontendLabel();
             if (is_array($frontendLabel)) {
@@ -56,22 +56,24 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Attribute_Edit
             return Mage::helper('{{namespace}}_{{module}}')->__('New {{EntityLabel}} Attribute');
         }
     }
+
     /**
-     * get validation url for form
+     * Get validation url for form
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getValidationUrl(){
+    public function getValidationUrl() {
         return $this->getUrl('*/*/validate', array('_current'=>true));
     }
+
     /**
-     * get save url for form
+     * Get save url for form
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getSaveUrl(){
+    public function getSaveUrl() {
         return $this->getUrl('*/'.$this->_controller.'/save', array('_current'=>true, 'back'=>null));
     }
 }

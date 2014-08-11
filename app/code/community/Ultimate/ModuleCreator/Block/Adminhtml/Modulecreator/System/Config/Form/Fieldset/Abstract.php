@@ -80,6 +80,7 @@ abstract class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_System_Confi
         $html .= $this->_getFooterHtml($element);
         return $html;
     }
+
     /**
      * get field renderer.
      * @access protected
@@ -92,6 +93,7 @@ abstract class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_System_Confi
         }
         return $this->_fieldRenderer;
     }
+
     /**
      * get HTML for the field
      * @access protected

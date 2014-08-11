@@ -174,6 +174,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         Mage::dispatchEvent('umc_module_add_entity_after', array('entity'=>$entity, 'module'=>$this));
         return $this;
     }
+
     /**
      * get a module entity
      * @access public
@@ -187,6 +188,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return null;
     }
+
     /**
      * module to xml
      * @access public
@@ -228,6 +230,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $xml;
     }
+
     /**
      * get the module entities
      * @access public
@@ -238,6 +241,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         $this->_prepareEntities();
         return $this->_entities;
     }
+
     /**
      * prepare the entities before saving
      * @access protected
@@ -248,6 +252,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         Mage::dispatchEvent('umc_module_prepare_entities', array('module'=>$this));
         return $this;
     }
+
     /**
      * add relation to module
      * @access public
@@ -261,6 +266,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         Mage::dispatchEvent('umc_module_add_relation_after', array('relation'=>$relation, 'module'=>$this));
         return $this;
     }
+
     /**
      * get module relations
      * @access public
@@ -280,6 +286,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $relations;
     }
+
     /**
      * get the extensions xml path
      * @access public
@@ -289,6 +296,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
     public function getXmlPath(){
         return Mage::helper('modulecreator')->getLocalPackagesPath().$this->getNamespace()."_".$this->getModuleName().'.xml';
     }
+
     /**
      * save the module as xml
      * @access public
@@ -421,6 +429,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $this;
     }
+
     /**
      * write a file
      * @access protected
@@ -452,6 +461,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $this;
     }
+
     /**
      * get the IO - class
      * @access public
@@ -506,6 +516,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
     public function getRestrictedEntityNames(){
         return $this->getDataSetDefault('restricted_entity_names', array_keys((array)Mage::helper('modulecreator')->getConfig()->getNode('restricted/entity')));
     }
+
     /**
      * get the restricted attribute codes
      * @access public
@@ -515,6 +526,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
     public function getRestrictedAttributeCodes(){
         return $this->getDataSetDefault('restricted_attribute_codes', (array)Mage::helper('modulecreator')->getConfig()->getNode('restricted/attribute'));
     }
+
     /**
      * get the restricted attribute codes because of the method names
      * @access public
@@ -606,6 +618,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         $this->_writeFile($this->getLogPath(), $text);
         return $this;
     }
+
     /**
      * write sql uninstall script
      * @access protected
@@ -673,6 +686,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         $this->_writeFile($this->getUninstallPath(),$text);
         return $this;
     }
+
     /**
      * check if some files already exist so it won't be overwritten
      * @access protected
@@ -700,6 +714,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
     public function getLogPath(){
         return Mage::helper('modulecreator')->getLocalPackagesPath().$this->getExtensionName().'/files.log';
     }
+
     /**
      * get path for uninstall sql file
      * @access public
@@ -722,6 +737,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return Mage::getBaseDir().DS;
     }
+
     /**
      * get relative path ro the module
      * @access public
@@ -734,6 +750,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         $relativePath = substr($basePath, strlen($remove));
         return $relativePath;
     }
+
     /**
      * get the module config
      * @access public
@@ -746,6 +763,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $this->_config;
     }
+
     /**
      * get contents of a file
      * @access public
@@ -1171,6 +1189,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $this->_sourceFolder;
     }
+
     /**
      * filter placeholders
      * @access protected
@@ -1197,6 +1216,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return str_replace(array_keys($replace), array_values($replace), $string);
     }
+
     /**
      * add file to create list
      * @access protected
@@ -1211,6 +1231,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $this;
     }
+
     /**
      * get text for licence
      * @access public
@@ -1253,6 +1274,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $this->getData('processed_license_'.$fileType);
     }
+
     /**
      * get all placeholders
      * @access public
@@ -1304,6 +1326,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return '';
     }
+
     /**
      * get config.xml default section
      * @access public
@@ -1349,6 +1372,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $text;
     }
+
     /**
      * get menu ACL for entities
      * @access public
@@ -1478,6 +1502,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return 'Mage_Core_Model_Resource_Setup';
     }
+
     /**
      * sort the translation file
      * @access protected
@@ -1513,6 +1538,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
     public function getQwertyuiop(){
         return $this->getHelper()->getQwertyuiop();
     }
+
     /**
      * this also does nothing
      * don't look here either
@@ -1523,6 +1549,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
     public function getQwertyuiopp(){
         return $this->getHelper()->getQwertyuiopp();
     }
+
     /**
      * check module dependency
      * @access public
@@ -1572,6 +1599,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $content;
     }
+
     /**
      * get layout for category view page
      * @access public
@@ -1697,6 +1725,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return '';
     }
+
     /**
      * get customer comment links
      * @access public
@@ -1763,6 +1792,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $this->getData('system_tab');
     }
+
     /**
      * system configuration tab position
      * @access public
@@ -1786,6 +1816,7 @@ class Ultimate_ModuleCreator_Model_Module extends Ultimate_ModuleCreator_Model_A
         }
         return $content;
     }
+
     /**
      * get xml for api2.xml resources
      * @access public

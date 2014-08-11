@@ -6,9 +6,8 @@
      * @access protected
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}} $object
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}
-     * {{qwertyuiop}}
      */
-    protected function _savePath($object){
+    protected function _savePath($object) {
         if ($object->getId()) {
             $this->_getWriteAdapter()->update(
                 $this->getMainTable(),
@@ -24,9 +23,8 @@
      * @access protected
      * @param string $path
      * @return int
-     * {{qwertyuiop}}
      */
-    protected function _getMaxPosition($path){
+    protected function _getMaxPosition($path) {
         $adapter = $this->getReadConnection();
         $positionField = $adapter->quoteIdentifier('position');
         $level   = count(explode('/', $path));
@@ -45,28 +43,30 @@
         }
         return $position;
     }
+
     /**
      * Get children {{entitiesLabel}} count
+     *
      * @access public
      * @param int ${{entity}}Id
      * @return int
-     * {{qwertyuiop}}
      */
-    public function getChildrenCount(${{entity}}Id){
+    public function getChildrenCount(${{entity}}Id) {
         $select = $this->_getReadAdapter()->select()
             ->from($this->getMainTable(), 'children_count')
             ->where('entity_id = :entity_id');
         $bind = array('entity_id' => ${{entity}}Id);
         return $this->_getReadAdapter()->fetchOne($select, $bind);
     }
+
     /**
      * Check if {{entityLabel}} id exist
+     *
      * @access public
      * @param int $entityId
      * @return bool
-     * {{qwertyuiop}}
      */
-    public function checkId($entityId){
+    public function checkId($entityId) {
         $select = $this->_getReadAdapter()->select()
             ->from($this->getMainTable(), 'entity_id')
             ->where('entity_id = :entity_id');
@@ -76,12 +76,12 @@
 
     /**
      * Check array of {{entitiesLabel}} identifiers
+     *
      * @access public
      * @param array $ids
      * @return array
-     * {{qwertyuiop}}
      */
-    public function verifyIds(array $ids){
+    public function verifyIds(array $ids) {
         if (empty($ids)) {
             return array();
         }
@@ -99,7 +99,7 @@
          * @return int
          * {{qwertyuiop}}
          */
-        public function getChildrenAmount(${{entity}}, $isActiveFlag = true){
+        public function getChildrenAmount(${{entity}}, $isActiveFlag = true) {
             $bind = array(
                 'active_flag'  => $isActiveFlag,
                 'c_path'   => ${{entity}}->getPath() . '/%'
@@ -117,7 +117,7 @@
          * @return array
          * {{qwertyuiop}}
          */
-        public function getParent{{Entities}}(${{entity}}){
+        public function getParent{{Entities}}(${{entity}}) {
             $pathIds = array_reverse(explode('/', ${{entity}}->getPath()));
             ${{entities}} = Mage::getResourceModel('{{namespace}}_{{module}}/{{entity}}_collection')
                 ->addFieldToFilter('entity_id', array('in' => $pathIds))
@@ -132,7 +132,7 @@
          * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Collection
          * {{qwertyuiop}}
          */
-        public function getChildren{{Entities}}(${{entity}}){
+        public function getChildren{{Entities}}(${{entity}}) {
             $collection = ${{entity}}->getCollection();
             $collection
                 ->addIdFilter(${{entity}}->getChild{{Entities}}())
@@ -148,7 +148,7 @@
          * @return array
          * {{qwertyuiop}}
          */
-        public function getChildren(${{entity}}, $recursive = true){
+        public function getChildren(${{entity}}, $recursive = true) {
             $bind = array(
                 'c_path'   => ${{entity}}->getPath() . '/%'
             );

@@ -68,12 +68,12 @@
         tree.render();
         root.expand();
     });
-    function bildCategoryTree(parent, config){
+    function bildCategoryTree(parent, config) {
         if (!config) {
             return null;
         }
-        if (parent && config && config.length){
-            for (var i = 0; i < config.length; i++){
+        if (parent && config && config.length) {
+            for (var i = 0; i < config.length; i++) {
                 config[i].uiProvider = Ext.tree.CheckboxNodeUI;
                 var node;
                 var _node = Object.clone(config[i]);
@@ -87,13 +87,13 @@
                 }
                 parent.appendChild(node);
                 node.loader = node.getOwnerTree().loader;
-                if(config[i].children){
+                if(config[i].children) {
                     bildCategoryTree(node, config[i].children);
                 }
             }
         }
     }
-    function categoryClick(node, e){
+    function categoryClick(node, e) {
         if (node.disabled) {
             return;
         }

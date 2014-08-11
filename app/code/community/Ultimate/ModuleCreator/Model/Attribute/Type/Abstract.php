@@ -85,6 +85,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getAttribute() {
         return $this->_attribute;
     }
+
     /**
      * get module
      * @access public
@@ -94,6 +95,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getEntity(){
         return $this->getAttribute()->getEntity();
     }
+
     /**
      * get module
      * @access public
@@ -103,6 +105,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getModule(){
         return $this->getAttribute()->getModule();
     }
+
     /**
      * get namespace
      * @access public
@@ -113,6 +116,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getNamespace($lower = false){
         return $this->getModule()->getNamespace($lower);
     }
+
     /**
      * check if attribute can be in admin grid
      * @access public
@@ -122,6 +126,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getAdminGrid() {
         return $this->getAttribute()->getData('admin_grid');
     }
+
     /**
      * get column options
      * @access public
@@ -144,6 +149,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
         $namespace  = $this->getNamespace(true);
         return $this->getPadding(3).'$'.'description .= \'<div>\'.Mage::helper(\''.$namespace.'_'.$module.'\')->__(\''.$attribute->getLabel().'\').\': \'.$item->get'.$this->getAttribute()->getMagicMethodCode().'().\'</div>\';'.$this->getEol();
     }
+
     /**
      * get the type for the form
      * @access public
@@ -153,6 +159,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getFormType() {
         return 'text';
     }
+
     /**
      * get column ddl type
      * @access public
@@ -162,6 +169,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getTypeDdl() {
         return $this->_typeDdl;
     }
+
     /**
      * get column ddl size
      * @access public
@@ -171,6 +179,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getSizeDdl() {
         return $this->_sizeDdl;
     }
+
     /**
      * get the html for frontend
      * @access public
@@ -180,6 +189,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getFrontendHtml() {
         return '<?php echo Mage::helper(\''.$this->getNamespace(true).'_'.$this->getModule()->getLowerModuleName().'\')->__(\''.$this->getAttribute()->getLabel().'\');?>:<?php echo $_'.strtolower($this->getAttribute()->getEntity()->getNameSingular()).'->get'.$this->getAttribute()->getMagicMethodCode().'();?>'.$this->getHelper()->getEol();
     }
+
     /**
      * get the setup type
      * @access public
@@ -189,6 +199,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getSetupType(){
         return $this->_setupType;
     }
+
     /**
      * get setup backend type
      * @access public
@@ -198,6 +209,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getSetupBackend(){
         return $this->_setupBackend;
     }
+
     /**
      * get the setup input
      * @access public
@@ -207,6 +219,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getSetupInput(){
         return $this->_setupInput;
     }
+
     /**
      * get the setup source
      * @access public
@@ -216,6 +229,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getSetupSource(){
         return $this->_setupSource;
     }
+
     /**
      * check if attribute is visible
      * @access public
@@ -225,6 +239,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getVisible(){
         return true;
     }
+
     /**
      * check if source needs to be generated
      * @access public
@@ -234,6 +249,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getGenerateSource(){
         return false;
     }
+
     /**
      * get additional setup values
      * @access public
@@ -273,6 +289,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getEditor() {
         return false;
     }
+
     /**
      * get attribute options for source model
      * @access public
@@ -282,6 +299,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getAttributeOptions(){
         return $this->getPadding(2).'return array();';
     }
+
     /**
      * get admin from options
      * @access public
@@ -312,6 +330,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getType(){
         return $this->_type;
     }
+
     /**
      * getter xml node for attribute
      * @return string
@@ -321,6 +340,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getTypeConfigPath() {
         return Ultimate_ModuleCreator_Helper_Data::ATTRIBUTE_TYPES_PATH.'/'.$this->getType();
     }
+
     /**
      * getter config for attribute
      * @access public
@@ -337,6 +357,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
         }
         return Mage::helper('modulecreator')->getConfig()->getNode($path);
     }
+
     /**
      * check if attribute can behave as name
      * @access public
@@ -346,6 +367,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getIsAllowedAsName() {
         return (bool)(string)$this->getConfig('allow_is_name');
     }
+
     /**
      * check if attribute can be in mass update
      * @access public
@@ -355,6 +377,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getMassUpdate() {
         return (bool)(string)$this->getConfig('mass_update');
     }
+
     /**
      * get values for mass action
      * @access public
@@ -364,6 +387,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getMassActionValues() {
         return '';
     }
+
     /**
      * get attribute default value
      * @access public
@@ -373,6 +397,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Abstract
     public function getDefaultValueProcessed() {
         return $this->getAttribute()->getData('default_value');
     }
+
     /**
      * get attribute default value setup content
      * @access public

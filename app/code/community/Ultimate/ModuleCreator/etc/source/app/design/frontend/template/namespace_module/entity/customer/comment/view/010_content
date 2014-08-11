@@ -4,7 +4,6 @@
  * customer {{EntitiesLabel}} comments view
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 ?>
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>

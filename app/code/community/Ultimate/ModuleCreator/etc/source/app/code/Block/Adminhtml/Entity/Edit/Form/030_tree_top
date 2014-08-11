@@ -9,18 +9,18 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
     /**
      * constructor
      * set template
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function __construct() {
         parent::__construct();
         $this->setTemplate('{{namespace}}_{{module}}/{{entity}}/edit/form.phtml');
     }
+
     /**
      * prepare the layout
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
-     * {{qwertyuiop}}
      */
     protected function _prepareLayout() {
         ${{entity}} = $this->get{{Entity}}();
@@ -59,38 +59,42 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
         );
         return parent::_prepareLayout();
     }
+
     /**
-     * get html for delete button
+     * Get html for delete button
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function getDeleteButtonHtml() {
         return $this->getChildHtml('delete_button');
     }
+
     /**
-     * get html for save button
+     * Get html for save button
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function getSaveButtonHtml() {
         return $this->getChildHtml('save_button');
     }
+
     /**
-     * get html for reset button
+     * Get html for reset button
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function getResetButtonHtml() {
         return $this->getChildHtml('reset_button');
     }
+
     /**
      * Retrieve additional buttons html
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function getAdditionalButtonsHtml() {
         $html = '';
@@ -106,9 +110,8 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
      * @param string $alias
      * @param array $config
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
-     * {{qwertyuiop}}
      */
-    public function addAdditionalButton($alias, $config){
+    public function addAdditionalButton($alias, $config) {
         if (isset($config['name'])) {
             $config['element_name'] = $config['name'];
         }
@@ -117,12 +120,13 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
         $this->_additionalButtons[$alias] = $alias . '_button';
         return $this;
     }
+
     /**
      * Remove additional button
+     *
      * @access public
      * @param string $alias
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
-     * {{qwertyuiop}}
      */
     public function removeAdditionalButton($alias) {
         if (isset($this->_additionalButtons[$alias])) {
@@ -131,20 +135,22 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
         }
         return $this;
     }
+
     /**
-     * get html for tabs
+     * Get html for tabs
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function getTabsHtml() {
         return $this->getChildHtml('tabs');
     }
+
     /**
-     * get the form header
+     * Get the form header
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function getHeader() {
         if ($this->get{{Entity}}Id()) {
@@ -154,35 +160,38 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
             return Mage::helper('{{namespace}}_{{module}}')->__('New Root {{EntityLabel}}');
         }
     }
+
     /**
-     * get the delete url
+     * Get the delete url
+     *
      * @access public
      * @param array $args
      * @return string
-     * {{qwertyuiop}}
      */
     public function getDeleteUrl(array $args = array()) {
         $params = array('_current'=>true);
         $params = array_merge($params, $args);
         return $this->getUrl('*/*/delete', $params);
     }
+
     /**
      * Return URL for refresh input element 'path' in form
+     *
      * @access public
      * @param array $args
      * @return string
-     * {{qwertyuiop}}
      */
     public function getRefreshPathUrl(array $args = array()) {
         $params = array('_current'=>true);
         $params = array_merge($params, $args);
         return $this->getUrl('*/*/refreshPath', $params);
     }
+
     /**
      * check if request is ajax
+     *
      * @access public
      * @return bool
-     * {{qwertyuiop}}
      */
     public function isAjax() {
         return Mage::app()->getRequest()->isXmlHttpRequest() || Mage::app()->getRequest()->getParam('isAjax');

@@ -16,7 +16,7 @@
                 Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('{{namespace}}_{{module}}')->__('The {{entityLabel}} has been saved.'));
                 $refreshTree = 'true';
             }
-            catch (Exception $e){
+            catch (Exception $e) {
                 $this->_getSession()->addError($e->getMessage())
                     ->set{{Entity}}Data($data);
                 $refreshTree = 'false';
@@ -30,8 +30,8 @@
 
     /**
      * Move {{entityLabel}} action
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function moveAction() {
         ${{entity}} = $this->_init{{Entity}}();
@@ -49,7 +49,7 @@
         catch (Mage_Core_Exception $e) {
             $this->getResponse()->setBody($e->getMessage());
         }
-        catch (Exception $e){
+        catch (Exception $e) {
             $this->getResponse()->setBody(Mage::helper('{{namespace}}_{{module}}')->__('{{EntityLabel}} move error'.$e));
             Mage::logException($e);
         }
@@ -58,8 +58,8 @@
 
     /**
      * Delete {{entityLabel}} action
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function deleteAction() {
         if ($id = (int) $this->getRequest()->getParam('id')) {
@@ -72,12 +72,12 @@
                 ${{entity}}->delete();
                 Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('{{namespace}}_{{module}}')->__('The {{entityLabel}} has been deleted.'));
             }
-            catch (Mage_Core_Exception $e){
+            catch (Mage_Core_Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
                 $this->getResponse()->setRedirect($this->getUrl('*/*/edit', array('_current'=>true)));
                 return;
             }
-            catch (Exception $e){
+            catch (Exception $e) {
                 Mage::logException($e);
                 Mage::getSingleton('adminhtml/session')->addError(Mage::helper('{{namespace}}_{{module}}')->__('An error occurred while trying to delete the {{entityLabel}}.'));
                 $this->getResponse()->setRedirect($this->getUrl('*/*/edit', array('_current'=>true)));
@@ -90,8 +90,8 @@
     /**
      * Tree Action
      * Retrieve {{entityLabel}} tree
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function treeAction() {
         $storeId = (int) $this->getRequest()->getParam('store');
@@ -124,10 +124,10 @@
     }
 
     /**
-    * Build response for refresh input element 'path' in form
-    * @access public
-    * {{qwertyuiop}}
-    */
+     * Build response for refresh input element 'path' in form
+     * @access public
+     * {{qwertyuiop}}
+     */
     public function refreshPathAction() {
         if ($id = (int) $this->getRequest()->getParam('id')) {
             ${{entity}} = Mage::getModel('{{namespace}}_{{module}}/{{entity}}')->load($id);
@@ -144,7 +144,6 @@
      * Check if admin has permissions to visit related pages
      * @access protected
      * @return boolean
-     * {{qwertyuiop}}
      */
     protected function _isAllowed() {
         return Mage::getSingleton('admin/session')->isAllowed('{{selectedMenuPath}}');

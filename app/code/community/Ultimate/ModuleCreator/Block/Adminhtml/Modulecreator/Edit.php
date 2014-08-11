@@ -46,6 +46,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit
     public function getModule() {
         return Mage::registry('current_module');
     }
+
     /**
      * get header text
      * @access public
@@ -59,6 +60,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit
         }
         return Mage::helper('modulecreator')->__('Create Module');
     }
+
     /**
      * prepare the layout
      * @access protected
@@ -138,6 +140,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit
     public function getBackButtonHtml() {
         return $this->getChildHtml('back_button');
     }
+
     /**
      * get the cancel button html
      * @access public
@@ -147,6 +150,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit
     public function getCancelButtonHtml() {
         return $this->getChildHtml('reset_button');
     }
+
     /**
      * get the save button html
      * @access public
@@ -156,6 +160,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit
     public function getSaveButtonHtml() {
         return $this->getChildHtml('save_button');
     }
+
     /**
      * get the save and continue edit button html
      * @access public
@@ -165,6 +170,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit
     public function getSaveAndEditButtonHtml() {
         return $this->getChildHtml('save_and_edit_button');
     }
+
     /**
      * get html for "add entity" button
      * @access public
@@ -189,6 +195,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit
             'active_tab' => null
         ));
     }
+
     /**
      * get the validation url
      * @access public
@@ -198,6 +205,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit
     public function getValidationUrl() {
         return $this->getUrl('*/*/validate', array('_current'=>true));
     }
+
     /**
      * check if edit mode is read only
      * @access public

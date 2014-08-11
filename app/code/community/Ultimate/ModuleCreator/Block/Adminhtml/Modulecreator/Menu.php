@@ -33,6 +33,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Menu
     public function getCacheLifetime(){
         return null;
     }
+
     /**
      * draw the menu
      * @access public

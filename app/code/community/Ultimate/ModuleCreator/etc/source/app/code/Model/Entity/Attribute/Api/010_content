@@ -5,7 +5,6 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
     extends Mage_Catalog_Model_Api_Resource {
@@ -17,8 +16,8 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
 
     /**
      * Constructor. Initializes default values.
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function __construct() {
         $this->_storeIdSessionField = '{{entity}}_store_id';
@@ -27,9 +26,9 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
 
     /**
      * Retrieve attributes
+     *
      * @access public
      * @return array
-     * {{qwertyuiop}}
      */
     public function items()
     {
@@ -60,11 +59,11 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
 
     /**
      * Retrieve attribute options
+     *
      * @access public
      * @param int $attributeId
      * @param string|int $store
      * @return array
-     * {{qwertyuiop}}
      */
     public function options($attributeId, $store = null)
     {
@@ -95,9 +94,9 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
 
     /**
      * Retrieve list of possible attribute types
+     *
      * @access public
      * @return array
-     * {{qwertyuiop}}
      */
     public function types() {
         $types = Mage::getModel('eav/adminhtml_system_config_source_inputtype')->toOptionArray();
@@ -116,10 +115,10 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
 
     /**
      * Create new product attribute
+     *
      * @access public
      * @param array $data input data
      * @return integer
-     * {{qwertyuiop}}
      */
     public function create($data) {
         $model = Mage::getModel('{{namespace}}_{{module}}/resource_eav_attribute');
@@ -169,11 +168,11 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
 
     /**
      * Update product attribute
+     *
      * @access public
      * @param string|integer $attribute attribute code or ID
      * @param array $data
      * @return boolean
-     * {{qwertyuiop}}
      */
     public function update($attribute, $data) {
         $model = $this->_getAttribute($attribute);
@@ -199,10 +198,10 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
 
     /**
      * Remove attribute
+     *
      * @access public
      * @param integer|string $attribute attribute ID or code
      * @return boolean
-     * {{qwertyuiop}}
      */
     public function remove($attribute) {
         $model = $this->_getAttribute($attribute);
@@ -222,7 +221,6 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
      * @access pubic
      * @param integer|string $attribute attribute ID or code
      * @return array
-     * {{qwertyuiop}}
      */
     public function info($attribute) {
         $model = $this->_getAttribute($attribute);
@@ -288,11 +286,11 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
 
     /**
      * Add option to select or multiselect attribute
+     *
      * @access public
      * @param  integer|string $attribute attribute ID or code
      * @param  array $data
      * @return bool
-     * {{qwertyuiop}}
      */
     public function addOption($attribute, $data) {
         $model = $this->_getAttribute($attribute);
@@ -337,11 +335,11 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
 
     /**
      * Remove option from select or multiselect attribute
+     *
      * @access public
      * @param  integer|string $attribute attribute ID or code
      * @param  integer $optionId option to remove ID
      * @return bool
-     * {{qwertyuiop}}
      */
     public function removeOption($attribute, $optionId) {
         $model = $this->_getAttribute($attribute);
@@ -373,7 +371,6 @@ class {{Namespace}}_{{Module}}_Model_{{Entity}}_Attribute_Api
      * @access protected
      * @param array $data input data
      * @return void
-     * {{qwertyuiop}}
      */
     protected function _prepareDataForSave(&$data)
     {

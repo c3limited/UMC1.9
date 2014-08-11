@@ -46,6 +46,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         $this->_entity = $entity;
         return $this;
     }
+
     /**
      * get the attribute entity
      * @access public
@@ -55,6 +56,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getEntity(){
         return $this->_entity;
     }
+
     /**
      * get the magic function code for attribute
      * @access public
@@ -72,6 +74,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         $code{0} = strtolower($code{0});
         return $code;
     }
+
     /**
      * get attribute the type instance
      * @access public
@@ -94,6 +97,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         }
         return $this->_typeInstance;
     }
+
     /**
      * check if an attribute is in the admin grid
      * @access public
@@ -106,6 +110,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         }
         return $this->getTypeInstance()->getAdminGrid();
     }
+
     /**
      * check if an attribute can use an editor
      * @access public
@@ -115,6 +120,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getEditor(){
         return $this->getTypeInstance()->getEditor();
     }
+
     /**
      * check if attribute is required
      * @access public
@@ -127,6 +133,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         }
         return $this->getTypeInstance()->getRequired();
     }
+
     /**
      * check if attribute can behave as name
      * @access public
@@ -236,6 +243,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getRssText(){
         return $this->getTypeInstance()->getRssText();
     }
+
     /**
      * get the sql column
      * @access public
@@ -255,6 +263,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         $ddl .= $helper->getPadding(2)."), '".$this->getLabel()."')".$this->getEol();
         return $ddl;
     }
+
     /**
      * get column ddl type
      * @access public
@@ -264,6 +273,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getTypeDdl(){
         return $this->getTypeInstance()->getTypeDdl();
     }
+
     /**
      * get column ddl size
      * @access public
@@ -273,6 +283,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getSizeDdl(){
         return $this->getTypeInstance()->getSizeDdl();
     }
+
     /**
      * get the frontend html
      * @access public
@@ -282,6 +293,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getFrontendHtml(){
         return $this->getTypeInstance()->getFrontendHtml();
     }
+
     /**
      * get wsdl format for attribute
      * @access public
@@ -330,6 +342,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
 
         return $content;
     }
+
     /**
      * get setup type
      * @access public
@@ -342,6 +355,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         }
         return $this->getTypeInstance()->getSetupType();
     }
+
     /**
      * get setup backend
      * @access public
@@ -354,6 +368,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         }
         return $this->getTypeInstance()->getSetupBackend();
     }
+
     /**
      * get setup input
      * @access public
@@ -363,6 +378,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getSetupInput(){
         return $this->getTypeInstance()->getSetupInput();
     }
+
     /**
      * get setup source
      * @access public
@@ -375,6 +391,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         }
         return $this->getTypeInstance()->getSetupSource();
     }
+
     /**
      * check id an attribute is global
      * @access public
@@ -413,6 +430,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         }
         return $code;
     }
+
     /**
      * check if attribute is visible
      * @access public
@@ -425,6 +443,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         }
         return $this->getTypeInstance()->getVisible();
     }
+
     /**
      * check if source needs to be generated
      * @access public
@@ -444,6 +463,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getAdditionalSetup() {
         return $this->getTypeInstance()->getAdditionalSetup();
     }
+
     /**
      * check if attribute is yes/no
      * @access public
@@ -483,6 +503,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
         }
         return 'false';
     }
+
     /**
      * get admin from options
      * @access public
@@ -502,6 +523,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getIsMultipleSelect(){
         return $this->getTypeInstance()->getIsMultipleSelect();
     }
+
     /**
      * check if entity is eav
      * @access public
@@ -511,6 +533,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getEntityEav() {
         return $this->getEntity()->getIsEav();
     }
+
     /**
      * check if entity is not eav
      * @access public
@@ -550,6 +573,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getModule(){
         return $this->getEntity()->getModule();
     }
+
     /**
      * get namespace
      * @access public
@@ -570,6 +594,7 @@ class Ultimate_ModuleCreator_Model_Attribute extends Ultimate_ModuleCreator_Mode
     public function getDefaultValueProcessed() {
         return $this->getTypeInstance()->getDefaultValueProcessed();
     }
+
     /**
      * get attribute default value setup content
      * @access public

@@ -52,6 +52,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Grid
         }
         return $this->_collection;
     }
+
     /**
      * Prepare  Collection for Grid
      * @access protected
@@ -158,6 +159,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Grid
         }
         return $this->getUrl('*/*/grid', $params);
     }
+
     /**
      * Row URL getter
      * @access public

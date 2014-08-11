@@ -34,6 +34,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit_Tab_Settings
     public function getTabLabel() {
         return Mage::helper('modulecreator')->__('General Settings');
     }
+
     /**
      * Return Tab title
      * @access public
@@ -43,6 +44,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit_Tab_Settings
     public function getTabTitle() {
         return Mage::helper('modulecreator')->__('General Settings');
     }
+
     /**
      * Can show tab in tabs
      * @access public
@@ -62,6 +64,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit_Tab_Settings
     public function isHidden() {
         return false;
     }
+
     /**
      * prepare the form
      * @access public

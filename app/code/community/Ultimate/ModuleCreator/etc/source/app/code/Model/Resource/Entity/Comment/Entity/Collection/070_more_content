@@ -16,11 +16,11 @@
 
     /**
      * Retrive all ids for collection
+     *
      * @access public
      * @param mixed $limit
      * @param mixed $offset
      * @return array
-     * {{qwertyuiop}}
      */
     public function getAllIds($limit = null, $offset = null) {
         $idsSelect = clone $this->getSelect();
@@ -31,12 +31,13 @@
         $idsSelect->columns('ct.comment_id');
         return $this->getConnection()->fetchCol($idsSelect);
     }
+
     /**
      * Retrieves column values
+     *
      * @access public
      * @param string $colName
      * @return array
-     * {{qwertyuiop}}
      */
     public function getColumnValues($colName) {
         $col = array();
@@ -45,11 +46,12 @@
         }
         return $col;
     }
+
     /**
      * Render SQL for retrieve product count
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function getSelectCountSql() {
         $select = parent::getSelectCountSql();

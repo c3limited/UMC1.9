@@ -38,6 +38,7 @@ class Ultimate_ModuleCreator_Model_Writer extends Mage_Connect_Package_Writer {
         parent::__construct($files, $namePackage='');
         $this->_pathPrefix = 'var'.DS.'modulecreator'.DS;
     }
+
     /**
      * build the package
      * @access public

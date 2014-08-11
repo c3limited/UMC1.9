@@ -1,5 +1,6 @@
     /**
      * Retrieve {{entitiesLabel}}
+     *
      * @access public
      * @param integer $parent
      * @param integer $recursionLevel
@@ -7,9 +8,8 @@
      * @param boolean $asCollection
      * @param boolean $toLoad
      * @return Varien_Data_Tree_Node_Collection|{{Namespace}}_{{Module}}_Model_Resource_{{Entity}}_Collection
-     * {{qwertyuiop}}
      */
-    public function get{{Entities}}($parent, $recursionLevel = 0, $sorted = false, $asCollection = false, $toLoad = true){
+    public function get{{Entities}}($parent, $recursionLevel = 0, $sorted = false, $asCollection = false, $toLoad = true) {
         $tree = Mage::getResourceModel('{{namespace}}_{{module}}/{{entity}}_tree');
         $nodes = $tree->loadNode($parent)
             ->loadChildren($recursionLevel)
@@ -20,53 +20,57 @@
         }
         return $nodes;
     }
+
     /**
      * Return all children ids of {{entity}} (with {{entity}} id)
+     *
      * @access public
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}} ${{entity}}
      * @return array
-     * {{qwertyuiop}}
      */
-    public function getAllChildren(${{entity}}){
+    public function getAllChildren(${{entity}}) {
         $children = $this->getChildren(${{entity}});
         $myId = array(${{entity}}->getId());
         $children = array_merge($myId, $children);
         return $children;
     }
+
     /**
      * Check {{entityLabel}} is forbidden to delete.
+     *
      * @access public
      * @param integer ${{entity}}Id
      * @return boolean
-     * {{qwertyuiop}}
      */
-    public function isForbiddenToDelete(${{entity}}Id){
+    public function isForbiddenToDelete(${{entity}}Id) {
         return (${{entity}}Id == Mage::helper('{{namespace}}_{{module}}/{{entity}}')->getRoot{{Entity}}Id());
     }
+
     /**
      * Get {{entityLabel}} path value by its id
+     *
      * @access public
      * @param int ${{entity}}Id
      * @return string
-     * {{qwertyuiop}}
      */
-    public function get{{Entity}}PathById(${{entity}}Id){
+    public function get{{Entity}}PathById(${{entity}}Id) {
         $select = $this->getReadConnection()->select()
             ->from($this->getMainTable(), array('path'))
             ->where('entity_id = :entity_id');
         $bind = array('entity_id' => (int)${{entity}}Id);
         return $this->getReadConnection()->fetchOne($select, $bind);
     }
+
     /**
      * Move {{entityLabel}} to another parent node
+     *
      * @access public
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}} ${{entity}}
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}} $newParent
      * @param null|int $after{{Entity}}Id
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}
-     * {{qwertyuiop}}
      */
-    public function changeParent({{Namespace}}_{{Module}}_Model_{{Entity}} ${{entity}}, {{Namespace}}_{{Module}}_Model_{{Entity}} $newParent, $after{{Entity}}Id = null){
+    public function changeParent({{Namespace}}_{{Module}}_Model_{{Entity}} ${{entity}}, {{Namespace}}_{{Module}}_Model_{{Entity}} $newParent, $after{{Entity}}Id = null) {
         $childrenCount  = $this->getChildrenCount(${{entity}}->getId()) + 1;
         $table          = $this->getMainTable();
         $adapter        = $this->_getWriteAdapter();
@@ -123,6 +127,7 @@
         ${{entity}}->addData($data);
         return $this;
     }
+
     /**
      * Process positions of old parent {{entityLabel}} children and new parent {{entityLabel}} children.
      * Get position for moved {{entityLabel}}
@@ -131,9 +136,8 @@
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}} $newParent
      * @param null|int $after{{Entity}}Id
      * @return int
-     * {{qwertyuiop}}
      */
-    protected function _processPositions(${{entity}}, $newParent, $after{{Entity}}Id){
+    protected function _processPositions(${{entity}}, $newParent, $after{{Entity}}Id) {
         $table  = $this->getMainTable();
         $adapter= $this->_getWriteAdapter();
         $positionField  = $adapter->quoteIdentifier('position');

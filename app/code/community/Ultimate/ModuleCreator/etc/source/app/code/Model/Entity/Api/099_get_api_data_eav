@@ -1,16 +1,15 @@
     /**
-     * get data for api
+     * Get data for api
      * @access protected
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}} ${{entity}}
      * @return array()
-     * {{qwertyuiop}}
      */
     protected function _getApiData({{Namespace}}_{{Module}}_Model_{{Entity}} ${{entity}}) {
         $data = array();
         $additional = array();
         $additionalAttributes = $this->getAdditionalAttributes();
         $additionalByCode = array();
-        foreach($additionalAttributes as $attribute){
+        foreach($additionalAttributes as $attribute) {
             $additionalByCode[] = $attribute['code'];
         }
         foreach (${{entity}}->getData() as $key=>$value) {

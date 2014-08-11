@@ -2,9 +2,8 @@
      * prepare mass action
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Grid
-     * {{qwertyuiop}}
      */
-    protected function _prepareMassaction(){
+    protected function _prepareMassaction() {
         $this->setMassactionIdField('entity_id');
         $this->getMassactionBlock()->setFormFieldName('{{entity}}');
         $this->getMassactionBlock()->addItem('delete', array(

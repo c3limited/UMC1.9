@@ -1,6 +1,6 @@
         $headBlock = $this->getLayout()->getBlock('head');
         if ($headBlock) {
-            if (${{entity}}->getMetaTitle()){
+            if (${{entity}}->getMetaTitle()) {
                 $headBlock->setTitle(${{entity}}->getMetaTitle());
             }
             else{

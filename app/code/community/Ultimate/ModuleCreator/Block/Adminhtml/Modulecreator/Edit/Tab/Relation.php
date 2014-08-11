@@ -34,6 +34,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit_Tab_Relation
         parent::_construct();
         $this->setTemplate('ultimate_modulecreator/edit/tab/relation.phtml');
     }
+
     /**
      * Return Tab label
      * @access public
@@ -43,6 +44,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit_Tab_Relation
     public function getTabLabel() {
         return Mage::helper('modulecreator')->__('Entity Relations');
     }
+
     /**
      * Return Tab title
      * @access public
@@ -52,6 +54,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_Modulecreator_Edit_Tab_Relation
     public function getTabTitle() {
         return Mage::helper('modulecreator')->__('Entity Relations');
     }
+
     /**
      * Can show tab in tabs
      * @access public

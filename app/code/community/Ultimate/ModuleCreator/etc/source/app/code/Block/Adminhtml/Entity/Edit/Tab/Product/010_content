@@ -5,16 +5,14 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Product
     extends Mage_Adminhtml_Block_Widget_Grid {
     /**
      * Set grid params
      * @access protected
-     * {{qwertyuiop}}
      */
-    public function __construct(){
+    public function __construct() {
         parent::__construct();
         $this->setId('product_grid');
         $this->setDefaultSort('position');
@@ -24,18 +22,18 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Product
             $this->setDefaultFilter(array('in_products'=>1));
         }
     }
+
     /**
      * prepare the product collection
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Product
-     * {{qwertyuiop}}
      */
     protected function _prepareCollection() {
         $collection = Mage::getResourceModel('catalog/product_collection');
         $collection->addAttributeToSelect('price');
         $adminStore = Mage_Core_Model_App::ADMIN_STORE_ID;
         $collection->joinAttribute('product_name', 'catalog_product/name', 'entity_id', null, 'left', $adminStore);
-        if ($this->get{{Entity}}()->getId()){
+        if ($this->get{{Entity}}()->getId()) {
             $constraint = '{{table}}.{{entity}}_id='.$this->get{{Entity}}()->getId();
         }
         else{
@@ -51,22 +49,22 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Product
         parent::_prepareCollection();
         return $this;
     }
+
     /**
      * prepare mass action grid
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Product
-     * {{qwertyuiop}}
      */
-    protected function _prepareMassaction(){
+    protected function _prepareMassaction() {
         return $this;
     }
+
     /**
      * prepare the grid columns
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Product
-     * {{qwertyuiop}}
      */
-    protected function _prepareColumns(){
+    protected function _prepareColumns() {
         $this->addColumn('in_products', array(
             'header_css_class'  => 'a-center',
             'type'  => 'checkbox',
@@ -102,13 +100,13 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Product
             'editable'  => true,
         ));
     }
+
     /**
      * Retrieve selected products
      * @access protected
      * @return array
-     * {{qwertyuiop}}
      */
-    protected function _getSelectedProducts(){
+    protected function _getSelectedProducts() {
         $products = $this->get{{Entity}}Products();
         if (!is_array($products)) {
             $products = array_keys($this->getSelectedProducts());
@@ -119,12 +117,11 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Product
      * Retrieve selected products
      * @access protected
      * @return array
-     * {{qwertyuiop}}
      */
     public function getSelectedProducts() {
         $products = array();
         $selected = Mage::registry('current_{{entity}}')->getSelectedProducts();
-        if (!is_array($selected)){
+        if (!is_array($selected)) {
             $selected = array();
         }
         foreach ($selected as $product) {
@@ -132,44 +129,47 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Product
         }
         return $products;
     }
+
     /**
-     * get row url
+     * Get row url
+     *
      * @access public
      * @param {{Namespace}}_{{Module}}_Model_Product
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getRowUrl($item){
+    public function getRowUrl($item) {
         return '#';
     }
+
     /**
-     * get grid url
+     * Get grid url
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getGridUrl(){
+    public function getGridUrl() {
         return $this->getUrl('*/*/productsGrid', array(
             'id'=>$this->get{{Entity}}()->getId()
         ));
     }
+
     /**
-     * get the current {{entity}}
+     * Get the current {{entity}}
+     *
      * @access public
      * @return {{Namespace}}_{{Module}}_Model_{{Entity}}
-     * {{qwertyuiop}}
      */
-    public function get{{Entity}}(){
+    public function get{{Entity}}() {
         return Mage::registry('current_{{entity}}');
     }
+
     /**
      * Add filter
      * @access protected
      * @param object $column
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Product
-     * {{qwertyuiop}}
      */
-    protected function _addColumnFilterToCollection($column){
+    protected function _addColumnFilterToCollection($column) {
         // Set custom filter for in product flag
         if ($column->getId() == 'in_products') {
             $productIds = $this->_getSelectedProducts();

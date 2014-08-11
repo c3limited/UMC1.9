@@ -34,6 +34,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_ModuleCreator_Edit_Tab_Help
         parent::_construct();
         $this->setTemplate('ultimate_modulecreator/edit/tab/help.phtml');
     }
+
     /**
      * Return Tab label
      * @access public
@@ -43,6 +44,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_ModuleCreator_Edit_Tab_Help
     public function getTabLabel() {
         return Mage::helper('modulecreator')->__('Help');
     }
+
     /**
      * Return Tab title
      * @access public
@@ -52,6 +54,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_ModuleCreator_Edit_Tab_Help
     public function getTabTitle() {
         return Mage::helper('modulecreator')->__('Help');
     }
+
     /**
      * Can show tab in tabs
      * @access public
@@ -71,6 +74,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_ModuleCreator_Edit_Tab_Help
     public function isHidden() {
         return false;
     }
+
     /**
      * get UMC version
      * @access public
@@ -85,6 +89,7 @@ class Ultimate_ModuleCreator_Block_Adminhtml_ModuleCreator_Edit_Tab_Help
         }
         return $version;
     }
+
     /**
      * prepare tab layout
      * @return Mage_Core_Block_Abstract

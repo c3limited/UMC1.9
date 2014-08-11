@@ -4,7 +4,6 @@
  * {{Entity}} admin edit tab attributes block
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
 */
 class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Attributes
     extends Mage_Adminhtml_Block_Widget_Form {
@@ -13,7 +12,6 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Attributes
      * @access protected
      * @return void
      * @see Mage_Adminhtml_Block_Widget_Form::_prepareForm()
-     * {{qwertyuiop}}
      */
     protected function _prepareForm() {
         $form = new Varien_Data_Form();
@@ -25,6 +23,6 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Tab_Attributes
             )
         );
         $attributes = $this->getAttributes();
-        foreach ($attributes as $attribute){
+        foreach ($attributes as $attribute) {
             $attribute->setEntity(Mage::getResourceModel('{{namespace}}_{{module}}/{{entity}}'));
         }

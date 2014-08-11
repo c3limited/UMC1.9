@@ -5,14 +5,13 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Block_Adminhtml_Catalog_Category_Tab_{{Entity}}
     extends Mage_Adminhtml_Block_Widget_Grid {
     /**
      * constructor
+     *
      * @access public
-     * {{qwertyuiop}}
      */
 	public function __construct() {
         parent::__construct();
@@ -20,24 +19,25 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_Catalog_Category_Tab_{{Entity}}
         $this->setDefaultSort('entity_id');
         $this->setUseAjax(true);
     }
+
     /**
-     * get current category
+     * Get current category
+     *
      * @access public
      * @return Mage_Catalog_Model_Category|null
-     * {{qwertyuiop}}
      */
     public function getCategory() {
         return Mage::registry('current_category');
     }
+
     /**
      * prepare the collection
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_Catalog_Category_Tab_{{Entity}}
-     * {{qwertyuiop}}
      */
     protected function _prepareCollection() {
-        $collection = Mage::getResourceModel('{{namespace}}_{{module}}/{{entity}}_collection'){{additionalPrepareCollection}};
-        if ($this->getCategory()->getId()){
+        $collection = Mage::getResourceModel('{{namespace}}_{{module}}/{{entity}}_collection') {{additionalPrepareCollection}};
+        if ($this->getCategory()->getId()) {
             $constraint = 'related.category_id='.$this->getCategory()->getId();
         }
         else{
@@ -52,11 +52,11 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_Catalog_Category_Tab_{{Entity}}
         parent::_prepareCollection();
         return $this;
     }
+
     /**
      * Prepare the columns
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_Catalog_Category_Tab_{{Entity}}
-     * {{qwertyuiop}}
      */
     protected function _prepareColumns() {
         $this->addColumn('in_{{entities}}', array(
@@ -94,9 +94,8 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_Catalog_Category_Tab_{{Entity}}
      * Retrieve selected {{entities}}
      * @access protected
      * @return array
-     * {{qwertyuiop}}
      */
-    protected function _getSelected{{Entities}}(){
+    protected function _getSelected{{Entities}}() {
         ${{entities}} = $this->getCategory{{Entities}}();
         if (!is_array(${{entities}})) {
             ${{entities}} = array_keys($this->getSelected{{Entities}}());
@@ -107,13 +106,12 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_Catalog_Category_Tab_{{Entity}}
      * Retrieve selected {{entities}}
      * @access protected
      * @return array
-     * {{qwertyuiop}}
      */
     public function getSelected{{Entities}}() {
         ${{entities}} = array();
         //used helper here in order not to override the category model
         $selected = Mage::helper('{{namespace}}_{{module}}/category')->getSelected{{Entities}}(Mage::registry('current_category'));
-        if (!is_array($selected)){
+        if (!is_array($selected)) {
             $selected = array();
         }
         foreach ($selected as ${{entity}}) {
@@ -121,35 +119,37 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_Catalog_Category_Tab_{{Entity}}
         }
         return ${{entities}};
     }
+
     /**
-     * get row url
+     * Get row url
+     *
      * @access public
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}}
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getRowUrl($item){
+    public function getRowUrl($item) {
         return '#';
     }
+
     /**
-     * get grid url
+     * Get grid url
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getGridUrl(){
+    public function getGridUrl() {
         return $this->getUrl('adminhtml/{{module}}_{{entity}}_catalog_category/{{entities}}grid', array(
             'id'=>$this->getCategory()->getId()
         ));
     }
+
     /**
      * Add filter
      * @access protected
      * @param object $column
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_Catalog_Category_Tab_{{Entity}}
-     * {{qwertyuiop}}
      */
-    protected function _addColumnFilterToCollection($column){
+    protected function _addColumnFilterToCollection($column) {
         if ($column->getId() == 'in_{{entities}}') {
             ${{entity}}Ids = $this->_getSelected{{Entities}}();
             if (empty(${{entity}}Ids)) {

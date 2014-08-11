@@ -1,4 +1,4 @@
-        if (Mage::app()->isSingleStoreMode()){
+        if (Mage::app()->isSingleStoreMode()) {
             $fieldset->addField('store_id', 'hidden', array(
                 'name'      => 'stores[]',
                 'value'     => Mage::app()->getStore(true)->getId()

@@ -1,15 +1,15 @@
     /**
      * Assign {{siblingLabel}} to {{entityLabel}}
+     *
      * @access public
      * @param int ${{entity}}Id
      * @param int ${{sibling}}Id
      * @return boolean
-     * {{qwertyuiop}}
      */
-    public function assign{{Sibling}}(${{entity}}Id, ${{sibling}}Id){
+    public function assign{{Sibling}}(${{entity}}Id, ${{sibling}}Id) {
         ${{entity}} = $this->_init{{Entity}}(${{entity}}Id);
         ${{sibling}}   = Mage::getModel('{{namespace}}_{{module}}/{{sibling}}')->load(${{sibling}}Id);
-        if (!${{sibling}}->getId()){
+        if (!${{sibling}}->getId()) {
             $this->_fault('{{sibling}}_not_exists');
         }
         ${{siblings}} = ${{entity}}->getSelected{{Siblings}}();
@@ -27,20 +27,21 @@
         }
         return true;
     }
+
     /**
      * remove {{siblingLabel}} from {{entityLabel}}
+     *
      * @access public
      * @param int ${{entity}}Id
      * @param int ${{sibling}}Id
      * @return boolean
-     * {{qwertyuiop}}
      */
-    public function unassign{{Sibling}}(${{entity}}Id, ${{sibling}}Id){
+    public function unassign{{Sibling}}(${{entity}}Id, ${{sibling}}Id) {
         ${{entity}}    = $this->_init{{Entity}}(${{entity}}Id);
         ${{siblings}}    = ${{entity}}->getSelected{{Siblings}}();
         ${{sibling}}Ids   = array();
-        foreach (${{siblings}} as $key=>${{sibling}}){
-            if (${{sibling}}->getId() != ${{sibling}}Id){
+        foreach (${{siblings}} as $key=>${{sibling}}) {
+            if (${{sibling}}->getId() != ${{sibling}}Id) {
                 ${{sibling}}Ids[] = ${{sibling}}->getId();
             }
         }

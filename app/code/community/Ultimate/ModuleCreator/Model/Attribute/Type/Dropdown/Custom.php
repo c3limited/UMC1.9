@@ -33,6 +33,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown_Custom
     public function getGenerateSource(){
         return $this->getTypeAttribute()->getAttribute()->getEntity()->getIsFlat();
     }
+
     /**
      * get additional setup values
      * @access public
@@ -59,6 +60,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown_Custom
         }
         return $content;
     }
+
     /**
      * get attribute options for source model
      * @access public
@@ -91,6 +93,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown_Custom
         }
         return $content;
     }
+
     /**
      * get attribute default value
      * @access public

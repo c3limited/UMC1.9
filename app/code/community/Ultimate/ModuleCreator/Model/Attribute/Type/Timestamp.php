@@ -61,6 +61,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Timestamp
         $options .= "'type'=> 'date',".$this->getEol();
         return $options;
     }
+
     /**
      * get the type for the form
      * @access public
@@ -70,6 +71,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Timestamp
     public function getFormType() {
         return 'date';
     }
+
     /**
      * get html for frontend
      * @access public
@@ -83,6 +85,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Timestamp
         $namespace  = $this->getNamespace(true);
         return '<?php echo Mage::helper(\''.$namespace.'_'.$module.'\')->__("'.$this->getAttribute()->getLabel().'");?>: <?php echo Mage::helper(\'core\')->formatDate($_'.$entityName.'->get'.$this->getAttribute()->getMagicMethodCode().'(), \'full\');?>'.$this->getEol();
     }
+
     /**
      * get options for admin form
      * @access public
@@ -97,6 +100,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Timestamp
         $options .= $padding.'\'format\'  => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),'.$eol;
         return $options;
     }
+
     /**
      * get text for rss
      * @access public

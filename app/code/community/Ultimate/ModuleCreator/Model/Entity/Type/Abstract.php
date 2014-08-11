@@ -58,6 +58,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getEntity() {
         return $this->_entity;
     }
+
     /**
      * get the module object
      * @access public
@@ -67,6 +68,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getModule(){
         return $this->getEntity()->getModule();
     }
+
     /**
      * get the namespace
      * @access public
@@ -77,6 +79,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getNamespace($lower = false) {
         return $this->getModule()->getNamespace($lower);
     }
+
     /**
      * get lower module name
      * @access public
@@ -86,6 +89,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getLowerModuleName() {
         return $this->getModule()->getLowerModuleName();
     }
+
     /**
      * get collection attributes
      * @access public
@@ -95,6 +99,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getCollectionAttributes() {
         return '';
     }
+
     /**
      * get admin join
      * @access public
@@ -104,6 +109,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getAdminJoin() {
         return '';
     }
+
     /**
      * prepare columns text
      * @access public
@@ -113,6 +119,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getPrepareColumnsHeader() {
         return '';
     }
+
     /**
      * get name attribute grid eav
      * @access public
@@ -122,6 +129,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getNameAttributeGridEav() {
         return '';
     }
+
     /**
      * check if entity has images
      * @access public
@@ -131,6 +139,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getHasImage() {
         return $this->getEntity()->getData('has_image');
     }
+
     /**
      * check if entity has files
      * @access public
@@ -140,6 +149,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getHasFile() {
         return $this->getEntity()->getData('has_file');
     }
+
     /**
      * check if submenu should exist
      * @access public
@@ -149,6 +159,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getHasSubmenu() {
         return false;
     }
+
     /**
      * get Additional submenu
      * @access public
@@ -159,6 +170,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getAdditionalMenu($padding) {
         return '';
     }
+
     /**
      * get Additional menu acl
      * @access public
@@ -169,6 +181,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getAdditionalMenuAcl($padding) {
         return '';
     }
+
     /**
      * check if comments are allowed by store
      * @access public
@@ -178,6 +191,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getAllowCommentByStore() {
         return $this->getEntity()->getAllowComment() && $this->getEntity()->getStore();
     }
+
     /**
      * get attributes content for setup
      * @access public
@@ -187,6 +201,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getAttributesSetup(){
         return '';
     }
+
     /**
      * get parent class for the entity resource model
      * @access public
@@ -196,6 +211,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getResourceModelParent(){
         return 'Mage_Core_Model_Resource_Db_Abstract';
     }
+
     /**
      * get parent class for the entity resource collection model
      * @access public
@@ -215,6 +231,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getResourceRelationsTables(){
         return '';
     }
+
     /**
      * get related entities relations table declaration
      * @access public
@@ -224,6 +241,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getResourceRelationsTablesDeclare(){
         return '';
     }
+
     /**
      * get admin layout content for index page
      * @access public
@@ -236,6 +254,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
         $namespace  = $this->getNamespace(true);
         return $this->getPadding(3).'<block type="'.$namespace.'_'.$module.'/adminhtml_'.$entity.'" name="'.$entity.'" />'.$this->getEol();
     }
+
     /**
      * get the parent model class
      * @access public
@@ -245,6 +264,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getEntityParentModel(){
         return 'Mage_Core_Model_Abstract';
     }
+
     /**
      * get entity table alias
      * @access public
@@ -254,6 +274,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getEntityTableAlias() {
         return 'main_table';
     }
+
     /**
      * get additional prepare collection
      * @access public
@@ -263,6 +284,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getAdditionalPrepareCollection(){
         return '';
     }
+
     /**
      * additional layout block for left section
      * @access public
@@ -272,6 +294,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getEditLayoutLeft() {
         return '';
     }
+
     /**
      * additional layout block edit
      * @access public
@@ -281,6 +304,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getEditLayoutAdditional() {
         return '';
     }
+
     /**
      * get param name for before save
      * @access public
@@ -290,6 +314,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getBeforeSaveParam() {
         return 'Mage_Core_Model_Abstract';
     }
+
     /**
      * entity attribute set string
      * @access public
@@ -299,6 +324,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getEntityAttributeSetId() {
         return '';
     }
+
     /**
      * filter method name
      * @access public
@@ -308,6 +334,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getFilterMethod() {
         return 'addFieldToFilter';
     }
+
     /**
      * convert multiple select fields to strings
      * @access public
@@ -331,6 +358,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
         }
         return $content;
     }
+
     /**
      * check if the entity helper can be created
      * @access public
@@ -340,6 +368,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getCanCreateEntityHelper(){
         return false;
     }
+
     /**
      * get additional code for toOptionArray()
      * @access public
@@ -349,6 +378,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getToOptionAddition(){
         return '';
     }
+
     /**
      * get comment name field filter index
      * @access public
@@ -358,6 +388,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getCommentFilterIndexPrefix() {
         return $this->getEntityTableAlias().'.';
     }
+
     /**
      * get additional api xml
      * @access public
@@ -367,6 +398,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getApiAdditional(){
         return '';
     }
+
     /**
      * get additional api faults
      * @access public
@@ -376,6 +408,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getApiFaults(){
         return '';
     }
+
     /**
      * additional API subentities.
      * @access public
@@ -385,6 +418,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getApiAdditionalSettings() {
         return '';
     }
+
     /**
      * get subentities acl
      * @access public
@@ -394,6 +428,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getSubEntitiesAcl(){
         return '';
     }
+
     /**
      * get api aliases
      * @access public
@@ -403,6 +438,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getApiResourcesAlias() {
         return '';
     }
+
     /**
      * get api V2 aliases
      * @access public
@@ -412,6 +448,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getApiResourcesAliasV2() {
         return '';
     }
+
     /**
      * get attributes format for wsdl
      * @access public
@@ -422,6 +459,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getWsdlAttributes($wsi = false){
         return '';
     }
+
     /**
      * get default api attributes
      * @access public
@@ -431,6 +469,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getDefaultApiAttributes(){
         return '';
     }
+
     /**
      * get add all attributes to collection
      * @access public
@@ -440,6 +479,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getAllAttributesToCollection() {
         return '';
     }
+
     /**
      * get load store id statement
      * @access public
@@ -449,6 +489,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getLoadStoreId() {
         return '';
     }
+
     /**
      * @access public
      * @return string
@@ -457,6 +498,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getRestCollectionCleanup() {
         return $this->getEol().$this->getPadding(2).'$'.$this->getEntity()->getNamePlural(true).'Array = $'.$this->getEntity()->getNamePlural(true).'Array[\'items\'];'.$this->getEol();
     }
+
     /**
      * @access public
      * @return string
@@ -465,6 +507,7 @@ abstract class Ultimate_ModuleCreator_Model_Entity_Type_Abstract
     public function getRestCollectionStoreId() {
         return '';
     }
+
     /**
      * @access public
      * @return string

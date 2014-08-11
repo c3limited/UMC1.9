@@ -1,10 +1,10 @@
     /**
      * Get available attributes of API resource
+     *
      * @access public
      * @param string $userType
      * @param string $operation
      * @return array
-     * {{qwertyuiop}}
      */
     public function getAvailableAttributes($userType, $operation) {
         $attributes = $this->getAvailableAttributesFromConfig();

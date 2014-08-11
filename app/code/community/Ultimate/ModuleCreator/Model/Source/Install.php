@@ -47,6 +47,7 @@ class Ultimate_ModuleCreator_Model_Source_Install {
         );
         return $options;
     }
+
     /**
      * get options as an array
      * @access public

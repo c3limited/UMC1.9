@@ -20,13 +20,13 @@
         $this->addExportType('*/*/exportXml', Mage::helper('{{namespace}}_{{module}}')->__('XML'));
         return parent::_prepareColumns();
     }
+
     /**
      * prepare mass action
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Grid
-     * {{qwertyuiop}}
      */
-    protected function _prepareMassaction(){
+    protected function _prepareMassaction() {
         $this->setMassactionIdField('ct_comment_id');
         $this->setMassactionIdFilter('ct.comment_id');
         $this->setMassactionIdFieldOnlyIndexValue(true);
@@ -55,22 +55,24 @@
         ));
         return $this;
     }
+
     /**
-     * get the row url
+     * Get the row url
+     *
      * @access public
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}}_Comment
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getRowUrl($row){
+    public function getRowUrl($row) {
         return $this->getUrl('*/*/edit', array('id' => $row->getCtCommentId()));
     }
+
     /**
-     * get the grid url
+     * Get the grid url
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
-    public function getGridUrl(){
+    public function getGridUrl() {
         return $this->getUrl('*/*/grid', array('_current'=>true));
     }

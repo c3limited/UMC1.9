@@ -4,9 +4,8 @@
      * @access protected
      * @param Varien_Object $object
      * @return {{Namespace}}_{{Module}}_Model_Resource_{{Entity}}
-     * {{qwertyuiop}}
      */
-    protected function _beforeSave({{beforeSaveParam}} $object){
+    protected function _beforeSave({{beforeSaveParam}} $object) {
         parent::_beforeSave($object);
         if (!$object->getChildrenCount()) {
             $object->setChildrenCount(0);

@@ -1,8 +1,9 @@
 {{RelationsResourceTablesDeclare}}
+
     /**
      * constructor
+     *
      * @access public
-     * {{qwertyuiop}}
      */
     public function __construct() {
         $resource = Mage::getSingleton('core/resource');
@@ -13,11 +14,12 @@
             );
 {{RelationsResourceTables}}
     }
+
     /**
      * wrapper for main table getter
+     *
      * @access public
      * @return string
-     * {{qwertyuiop}}
      */
     public function getMainTable() {
         return $this->getEntityTable();

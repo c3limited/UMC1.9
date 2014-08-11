@@ -5,7 +5,6 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}_AttributeController
     extends Mage_Adminhtml_Controller_Action {
@@ -14,7 +13,6 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}_AttributeControll
      * predispatch
      * @accees public
      * @return void
-     * {{qwertyuiop}}
      */
     public function preDispatch() {
         parent::preDispatch();
@@ -24,9 +22,8 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}_AttributeControll
      * init action
      * @accees protected
      * @return {{Namespace}}_{{Module}}_Adminhtml_{{Entity}}_AttributeController
-     * {{qwertyuiop}}
      */
-    protected function _initAction(){
+    protected function _initAction() {
         $this->_title(Mage::helper('{{namespace}}_{{module}}')->__('{{EntityLabel}}'))
              ->_title(Mage::helper('{{namespace}}_{{module}}')->__('Attributes'))
              ->_title(Mage::helper('{{namespace}}_{{module}}')->__('Manage Attributes'));
@@ -44,9 +41,8 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}_AttributeControll
      * default action
      * @accees public
      * @return void
-     * {{qwertyuiop}}
      */
-    public function indexAction(){
+    public function indexAction() {
         $this->_initAction()
             ->renderLayout();
     }
@@ -54,18 +50,16 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}_AttributeControll
      * add attribute action
      * @accees public
      * @return void
-     * {{qwertyuiop}}
      */
-    public function newAction(){
+    public function newAction() {
         $this->_forward('edit');
     }
 	/**
      * edit attribute action
      * @accees public
      * @return void
-     * {{qwertyuiop}}
      */
-    public function editAction(){
+    public function editAction() {
         $id = $this->getRequest()->getParam('attribute_id');
         $model = Mage::getModel('{{namespace}}_{{module}}/resource_eav_attribute')
             ->setEntityTypeId($this->_entityTypeId);
@@ -102,9 +96,8 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}_AttributeControll
      * validate attribute action
      * @accees public
      * @return void
-     * {{qwertyuiop}}
      */
-    public function validateAction(){
+    public function validateAction() {
         $response = new Varien_Object();
         $response->setError(false);
 
@@ -127,9 +120,8 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}_AttributeControll
      * @access protected
      * @param array $data
      * @return array
-     * {{qwertyuiop}}
      */
-    protected function _filterPostData($data){
+    protected function _filterPostData($data) {
         if ($data) {
             $helper = Mage::helper('{{namespace}}_{{module}}');
             //labels
@@ -161,11 +153,11 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}_AttributeControll
     }
  	/**
      * save attribute action
+     *
      * @access public
      * @return void
-     * {{qwertyuiop}}
      */
-    public function saveAction(){
+    public function saveAction() {
         $data = $this->getRequest()->getPost();
         if ($data) {
             $session = Mage::getSingleton('adminhtml/session');
@@ -251,11 +243,11 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}_AttributeControll
     }
 	/**
      * delete attribute action
+     *
      * @access public
      * @return void
-     * {{qwertyuiop}}
      */
-    public function deleteAction(){
+    public function deleteAction() {
         if ($id = $this->getRequest()->getParam('attribute_id')) {
             $model = Mage::getModel('{{namespace}}_{{module}}/resource_eav_attribute');
 
@@ -284,13 +276,13 @@ class {{Namespace}}_{{Module}}_Adminhtml_{{Module}}_{{Entity}}_AttributeControll
             Mage::helper('{{namespace}}_{{module}}')->__('Unable to find an attribute to delete.'));
         $this->_redirect('*/*/');
     }
+
     /**
      * check access
      * @access protected
      * @return bool
-     * {{qwertyuiop}}
      */
-    protected function _isAllowed(){
+    protected function _isAllowed() {
         return Mage::getSingleton('admin/session')->isAllowed('{{selectedMenuPath}}_attributes');
     }
 }

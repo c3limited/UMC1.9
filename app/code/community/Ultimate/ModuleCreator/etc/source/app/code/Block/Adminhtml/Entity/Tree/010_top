@@ -5,29 +5,28 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Tree
     extends {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Abstract {
     /**
      * constructor
+     *
      * @access public
      * @return void
-     * {{qwertyuiop}}
      */
-    public function __construct(){
+    public function __construct() {
         parent::__construct();
         $this->setTemplate('{{namespace}}_{{module}}/{{entity}}/tree.phtml');
         $this->setUseAjax(true);
         $this->_withProductCount = true;
     }
+
     /**
      * prepare the layout
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Tree
-     * {{qwertyuiop}}
      */
-    protected function _prepareLayout(){
+    protected function _prepareLayout() {
         $addUrl = $this->getUrl("*/*/add", array(
             '_current'=>true,
             'id'=>null,

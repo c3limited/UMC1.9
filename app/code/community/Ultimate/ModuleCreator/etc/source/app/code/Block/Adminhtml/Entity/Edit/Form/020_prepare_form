@@ -4,7 +4,6 @@ class {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
      * prepare form
      * @access protected
      * @return {{Namespace}}_{{Module}}_Block_Adminhtml_{{Entity}}_Edit_Form
-     * {{qwertyuiop}}
      */
     protected function _prepareForm() {
         $form = new Varien_Data_Form(array(

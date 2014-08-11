@@ -5,7 +5,6 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 ?>
 <?php $_{{entity}} = $this->getCurrent{{Entity}}();?>

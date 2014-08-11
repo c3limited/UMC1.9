@@ -61,6 +61,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Multiselect
     public function getAdminGrid(){
         return false;
     }
+
     /**
      * get the type for the form
      * @access public
@@ -70,6 +71,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Multiselect
     public function getFormType(){
         return 'multiselect';
     }
+
     /**
      * check if attribute is multiple select
      * @access public
@@ -79,6 +81,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Multiselect
     public function getIsMultipleSelect(){
         return true;
     }
+
     /**
      * get the setup type of the dropdown
      * @access public
@@ -88,6 +91,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Multiselect
     public function getSetupType(){
         return $this->_setupType;
     }
+
     /**
      * get attribute setup type
      * @access public
@@ -97,6 +101,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Multiselect
     public function getTypeDdl(){
         return $this->_typeDdl;
     }
+
     /**
      * check if options should be returned with empty
      * @access public
@@ -106,6 +111,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Multiselect
     public function getOptionsFlag() {
         return 'false';
     }
+
     /**
      * get values for mass action
      * @access public
@@ -115,6 +121,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Multiselect
     public function getMassActionValues() {
         return '';
     }
+
     /**
      * get attribute default value setup content
      * @access public

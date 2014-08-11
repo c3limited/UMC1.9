@@ -13,7 +13,6 @@
      * prepare {{entityLabel}} for response
      * @access protected
      * @param {{Namespace}}_{{Module}}_Model_{{Entity}} ${{entity}}
-     * {{qwertyuiop}}
      */
     protected function _prepare{{Entity}}ForResponse({{Namespace}}_{{Module}}_Model_{{Entity}} ${{entity}}) {
         ${{entity}}Data = ${{entity}}->getData();

@@ -5,14 +5,13 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Block_{{Entity}}_Catalog_Product_List extends Mage_Core_Block_Template {
     /**
-     * get the list of products
+     * Get the list of products
+     *
      * @access public
      * @return Mage_Catalog_Model_Resource_Product_Collection
-     * {{qwertyuiop}}
      */
     public function getProductCollection() {
         $collection = $this->get{{Entity}}()->getSelectedProductsCollection();
@@ -23,11 +22,12 @@ class {{Namespace}}_{{Module}}_Block_{{Entity}}_Catalog_Product_List extends Mag
         Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($collection);
         return $collection;
     }
+
     /**
-     * get current {{entity}}
+     * Get current {{entity}}
+     *
      * @access public
      * @return {{Namespace}}_{{Module}}_Model_{{Entity}}
-     * {{qwertyuiop}}
      */
     public function get{{Entity}}() {
         return Mage::registry('current_{{entity}}');

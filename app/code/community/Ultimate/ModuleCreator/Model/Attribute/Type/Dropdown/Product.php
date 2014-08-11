@@ -61,6 +61,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown_Product
     public function getEntityCode(){
         return $this->_entityCode;
     }
+
     /**
      * get attribute setup type
      * @access public
@@ -81,6 +82,7 @@ class Ultimate_ModuleCreator_Model_Attribute_Type_Dropdown_Product
         }
         return false;
     }
+
     /**
      * get attribute setup type
      * @access public

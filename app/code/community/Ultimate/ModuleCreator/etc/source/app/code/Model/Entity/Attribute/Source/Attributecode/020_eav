@@ -1,9 +1,9 @@
     /**
-     * get option text
+     * Get option text
+     *
      * @access public
      * @param mixed $value
      * @return string
-     * {{qwertyuiop}}
      */
     public function getOptionText($value) {
         $options = $this->getOptionsArray();

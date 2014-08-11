@@ -5,7 +5,6 @@
  *
  * @category    {{Namespace}}
  * @package     {{Namespace}}_{{Module}}
- * {{qwertyuiopp}}
  */
 class {{Namespace}}_{{Module}}_Block_{{Entity}}_Widget_Link
     extends {{Namespace}}_{{Module}}_Block_{{Entity}}_Widget_View {
